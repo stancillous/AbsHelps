@@ -1,33 +1,44 @@
 <template>
   <div>
     <main>
+
+      <!-- <div @click="showMobileNav = !showMobileNav" class="mobile-overlay"> -->
+      <div  @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]">
+
+
+      </div>
       <header>
-        <div></div>
         <!-- don't remove this element -->
+        <div class="mobile-view-hidden"></div>
         <nav>
-       
-            <transition name="fade">
-                    <template v-if="showLoginDiv">
-                            <Login/>
-                </template>
-
-                </transition>
-
+          <transition name="fade">
+            <template v-if="showLoginDiv">
+              <Login />
+            </template>
+          </transition>
 
           <div class="logo">
-            <h3 class="text-light text-uppercase">A.helps</h3>
+            <h3 class="text-light">A.Helps</h3>
           </div>
-          <div class="menu-links">
+
+          <div :class="['menu-links', {'show-mobile-menu': showMobileNav}]">
             <ul>
-              <li><a class="text-light" href="">About</a></li>
+              <li><a href="">About</a></li>
               <li><a href="">Services</a></li>
               <li><a href="">Solutions</a></li>
               <li><a href="">Process</a></li>
             </ul>
           </div>
-          <div class="signin-wrp">
-            <!-- <a href="/">Sign in</a> -->
-            <a @click.prevent="showLoginDiv = !showLoginDiv" href="">Sign in</a>
+       
+          <div class="d-flex align-items-center">
+            <div class="signin-wrp">
+              <!-- <a href="/">Sign in</a> -->
+              <a @click.prevent="showLoginDiv = !showLoginDiv" href="">Sign in</a>
+            </div>
+            <div @click="showMobileNav = ! showMobileNav" class="mobile-menu-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="rgba(255, 255,255, .88)"></path></svg>
+            </div>
+
           </div>
         </nav>
       </header>
@@ -36,15 +47,14 @@
         <div class="hs-wrp">
           <div class="hswrp-container">
             <h1 class="hero-ttl">
+              Tailored staffing services <br>
+              with guaranteed quality
+            </h1>
+            <!-- <h1 class="hero-ttl">
               Tailored
               <span>staffing services with</span>
               <span>guaranteed quality</span>
-            </h1>
-            <!-- <p>Absolute Helps provides reliable, expertly vetted staff for your home or business, offering tailored, flexible, and affordable solutions.</p>
-                    <div class="btns">
-                        <a class="get-started text-dark text-decoration-none" href="">Get started</a>
-                        <a class="learn-more " href="">Learn more -></a>
-                    </div> -->
+            </h1> -->
           </div>
         </div>
       </section>
@@ -197,73 +207,82 @@
             <h1>Testimonials</h1>
             <div class="row-wrp">
               <div class="col-md-6 author">
-                <img
-                  src="https://avatars.githubusercontent.com/u/99094257?v=4"
-                  alt="image of reviewer"
-                />
-                <p class="author-name">Raymond Stance</p>
+                <img :src="currentReview.img" alt="image of reviewer" />
+                <p class="author-name">{{ currentReview.author }}</p>
 
                 <div class="nav-btns">
                   <div class="navbtns-wrp">
-                    <svg
-                      fill="#000000"
-                      height="26px"
-                      width="26px"
-                      version="1.1"
-                      id="XMLID_54_"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 0 24 24"
-                      xml:space="preserve"
-                      stroke="#000000"
-                      stroke-width="0.00024000000000000003"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <g id="previous">
-                          <g>
-                            <polygon
-                              points="17.2,23.7 5.4,12 17.2,0.3 18.5,1.7 8.4,12 18.5,22.3 "
-                            ></polygon>
+                    <!-- <div> -->
+                    <div>
+                      <svg
+                        @click="prevReview"
+                        :class="['nav-btn', { disabled: currentIndex === 0 }]"
+                        fill="#000000"
+                        height="26px"
+                        width="26px"
+                        version="1.1"
+                        id="XMLID_54_"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 24 24"
+                        xml:space="preserve"
+                        stroke="#000000"
+                        stroke-width="0.00024000000000000003"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g id="previous">
+                            <g>
+                              <polygon
+                                points="17.2,23.7 5.4,12 17.2,0.3 18.5,1.7 8.4,12 18.5,22.3 "
+                              ></polygon>
+                            </g>
                           </g>
                         </g>
-                      </g>
-                    </svg>
+                      </svg>
+                    </div>
                     <div class="line"></div>
-                    <svg
-                      fill="#000000"
-                      height="26px"
-                      width="26px"
-                      version="1.1"
-                      id="XMLID_287_"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 0 24 24"
-                      xml:space="preserve"
-                      stroke="#000000"
-                      stroke-width="0.00024000000000000003"
-                    >
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g
-                        id="SVGRepo_tracerCarrier"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></g>
-                      <g id="SVGRepo_iconCarrier">
-                        <g id="next">
-                          <g>
-                            <polygon
-                              points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "
-                            ></polygon>
+                    <div>
+                      <svg
+                        @click="nextReview"
+                        :class="[
+                          'nav-btn',
+                          { disabled: currentIndex === reviews.length - 1 },
+                        ]"
+                        fill="#000000"
+                        height="26px"
+                        width="26px"
+                        version="1.1"
+                        id="XMLID_287_"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 24 24"
+                        xml:space="preserve"
+                        stroke="#000000"
+                        stroke-width="0.00024000000000000003"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g id="next">
+                            <g>
+                              <polygon
+                                points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "
+                              ></polygon>
+                            </g>
                           </g>
                         </g>
-                      </g>
-                    </svg>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -297,11 +316,7 @@
 
                 <div class="comment-wrp">
                   <p>
-                    Absolute Helps made the process of finding a trustworthy
-                    housekeeper incredibly easy. Their team really took the time
-                    to understand our needs and matched us with a wonderful
-                    professional. The service has been reliable, and we couldn’t
-                    be happier with the quality and care provided.
+                    {{ currentReview.content }}
                   </p>
                 </div>
               </div>
@@ -314,18 +329,89 @@
 </template>
 
 <script setup lang="ts">
-
 // variable to help show/hide the login div
+const showLoginDiv = ref(false);
 
-const showLoginDiv = ref(false)
+// variable to tell if to show the mobile nav
+const showMobileNav = ref(false)
 
 
+// holds the user testimonials
+const reviews = ref([
+  {
+    img: "https://images.generated.photos/AbnJeADipVEc32X4wfumMUnS_ft4NEH4oTHhANCTygw/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mjg5NjE5LmpwZw.jpg",
+    content:
+      "Absolute Helps provided us with a fantastic nanny who fit right into our family. The entire process was seamless, and we appreciate how they really listened to our needs.",
+    author: "Maria K.",
+  },
+  {
+    img: "https://images.generated.photos/6Rvff04erBdpLhPXyV-GZE500SIzKI-YCBtlLykuZog/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NzYxODI0LmpwZw.jpg",
+    content:
+      "We were struggling to find a reliable housekeeper until we came across Absolute Helps. Their vetting process gave us peace of mind, and the service has been impeccable.",
+    author: "James O.",
+  },
+  {
+    img: "https://images.generated.photos/_6k0_gRXM89EclypTE03kJzSlNvtssinYSczO3R0wxA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MTYwNzI1LmpwZw.jpg",
+    content:
+      "The professionalism at Absolute Helps is unmatched. From the moment we reached out, the team was responsive and understanding of our specific needs for corporate cleaning services.",
+    author: "Grace N.",
+  },
+  {
+    img: "https://images.generated.photos/ihTqasG-Z79-kF2ZK0yjklP-vO6Etrm2aTwhDwKFviQ/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NDgwMTI4LmpwZw.jpg",
+    content:
+      "The quality of staff we've received from Absolute Helps has been outstanding. We've hired both temporary and permanent housekeepers, and each has been skilled and reliable.",
+    author: "David M.",
+  },
+  {
+    img: "https://images.generated.photos/nKTQmgagstcNwz4qKsGqaYiWTJtC1dIzKtgXZgjq_ks/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NzE1NTkxLmpwZw.jpg",
+    content:
+      "I couldn't be happier with the nanny we found through Absolute Helps. She is experienced, trustworthy, and has been an incredible addition to our home.",
+    author: "Ann W.",
+  },
+  {
+    img: "https://images.generated.photos/ZQMTQ_PRwXxOJ-hCHlLBJnCbjAKvUPdHk5EqvnVVyII/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NjQzMDQ4LmpwZw.jpg",
+    content:
+      "Absolute Helps is our go-to for staffing solutions. Their personalized service and rigorous vetting ensure we always get high-quality, reliable staff.",
+    author: "Samuel T.",
+  },
+]);
+
+const currentIndex = ref(0);
+
+const currentReview = computed(() => reviews.value[currentIndex.value]);
+
+const nextReview = () => {
+  if (currentIndex.value < reviews.value.length - 1) {
+    currentIndex.value += 1;
+  }
+};
+
+const prevReview = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value -= 1;
+  }
+};
 </script>
 
 <style scoped lang="scss">
 .section-ttl {
   font-size: 1.2rem;
   opacity: 0.8;
+}
+
+// to be shown on mobile when user clicks on menu btn
+.mobile-overlay{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+}
+
+// class to hide mobile overlay
+.hideMobileOverlay{
+    display: none;
+
 }
 
 header {
@@ -339,7 +425,7 @@ header {
   justify-content: space-between;
 
   nav {
-    position: relative;
+    // position: relative;
     color: black;
     padding: 0 2rem;
     display: flex;
@@ -347,6 +433,7 @@ header {
     .logo h3 {
       margin-right: 2rem;
       font-size: 1.6rem;
+      font-weight: 900;
     }
 
     .menu-links {
@@ -373,6 +460,12 @@ header {
         padding: 1rem 2rem;
       }
     }
+
+    .mobile-menu-btn{
+      margin-left: 2rem;
+      cursor: pointer;
+      display: none;
+    }
   }
 }
 
@@ -382,6 +475,7 @@ header {
   height: 70vh;
   color: white;
   display: flex;
+  padding: 0 1rem;
   align-items: center;
   justify-content: center;
 
@@ -420,20 +514,21 @@ header {
 
   .hero-ttl {
     font-size: 9rem;
+    opacity: .8;
     line-height: 120px;
     z-index: 1;
     font-weight: 500;
 
-    span {
-      &:nth-child(1) {
-        display: block;
-        padding: 1rem 0;
-        padding-left: 10rem;
-      }
-      &:nth-child(2) {
-        padding-left: 4rem;
-      }
-    }
+    // span {
+    //   &:nth-child(1) {
+    //     display: block;
+    //     padding: 1rem 0;
+    //     padding-left: 10rem;
+    //   }
+    //   &:nth-child(2) {
+    //     padding-left: 4rem;
+    //   }
+    // }
   }
 
   p {
@@ -607,15 +702,15 @@ header {
       max-width: 85vw;
       margin: 0 auto;
       width: 100%;
-      
+
       h1 {
-          opacity: 0.8;
-          font-size: 3.5rem;
-          padding-bottom: 3rem;
-        }
-        .row-wrp {
-            display: grid;
-          grid-template-columns: 50% 50%;
+        opacity: 0.8;
+        font-size: 3.5rem;
+        padding-bottom: 3rem;
+      }
+      .row-wrp {
+        display: grid;
+        grid-template-columns: 50% 50%;
         .author {
           margin-bottom: 6rem;
           .author-name {
@@ -632,6 +727,12 @@ header {
             width: 10rem;
             margin: 0 1rem;
           }
+
+          .disabled {
+            background-color: rgba(112, 104, 104, 0.344);
+            cursor: not-allowed;
+            opacity: 0.3;
+          }
           svg {
             border: 1px solid rgba(0, 0, 0, 0.3);
             height: 4rem;
@@ -642,7 +743,7 @@ header {
           }
         }
         .comment {
-            width: 100%;
+          width: 100%;
           .comment-wrp {
             font-size: 2.4rem;
             margin-top: 3rem;
@@ -660,24 +761,90 @@ header {
   }
 }
 
-
 @media screen and (max-width: 1100px) {
-    .hero-section .hero-ttl{
-        font-size: 6rem;
-        line-height: 70px;
-    }
-    
+  .hero-section .hero-ttl {
+    font-size: 6rem;
+    line-height: 70px;
+  }
 }
 @media screen and (max-width: 800px) {
-    .hero-section .hero-ttl{
-        font-size: 4rem;
-        line-height: 50px;
-    }
-
-    
+  .hero-section .hero-ttl {
+    font-size: 4rem;
+    line-height: 50px;
+  }
 }
 
+// show mobile menu here
 @media screen and (max-width: 767px) {
+
+  // show mobile menu btn
+
+  header{
+
+    .mobile-view-hidden{
+      display: none;
+    }
+
+    nav{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+          .menu-links{
+            position: fixed;
+            top: -2rem;
+            z-index: 3;
+            // left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100vh;
+            width: 70vw;
+            background-color: white;
+            // display: none;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all .4s ease-in-out;
+      
+            ul{
+              height: 80%;
+
+              padding-top: 7rem;
+              display: flex;
+              flex-direction: column;
+              
+              li{
+                padding: 1.4rem 0;
+                a{
+                  color: black;
+                }
+              }
+      
+            }
+          }
+      
+          // class to be toggled to show/hide the mobile menu nav
+          .show-mobile-menu{
+            display: block;
+            transform: translateX(0%);
+            opacity: 1;
+          }
+      
+          .signin-wrp{
+            margin-top: unset;
+            a{
+              border-radius: 2.4rem;
+              padding: .5rem 1.5rem;
+              font-size: 1.2rem;
+            }
+          }
+          .mobile-menu-btn{
+            display: block;
+          }
+
+    }
+
+
+  }
+
   .services .services-wrp .grid-wrp {
     display: flex;
     overflow-x: scroll;
@@ -695,27 +862,26 @@ header {
     }
 
     .grid-det {
-        min-width: 60vw;
+      min-width: 60vw;
     }
-}
-.testimonials .test-wrp .test-wrp-container .row-wrp{
+  }
+  .testimonials .test-wrp .test-wrp-container .row-wrp {
     display: flex;
     flex-direction: column-reverse;
     font-size: 1.9rem;
 
-    .author{
-
-        .navbtns-wrp{
-            margin-top: 3rem;
-        }
+    .author {
+      .navbtns-wrp {
+        margin-top: 3rem;
+      }
     }
 
-    .comment{
-        margin-bottom: 4rem;
-        .comment-wrp{
-            font-size: 1.8rem;
-        }
+    .comment {
+      margin-bottom: 4rem;
+      .comment-wrp {
+        font-size: 1.8rem;
+      }
     }
-}
+  }
 }
 </style>
