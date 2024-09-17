@@ -59,6 +59,7 @@
         </div>
       </section>
 
+
       <section class="after-hs-section">
         <div class="after-hs">
           <div class="container">
@@ -314,16 +315,43 @@
                   </g>
                 </svg>
 
-                <div class="comment-wrp">
-                  <p>
-                    {{ currentReview.content }}
-                  </p>
-                </div>
+                  <div class="comment-wrp">
+                    <p>
+                      {{ currentReview.content }}
+                    </p>
+                  </div>
+
               </div>
             </div>
           </div>
         </div>
       </section>
+
+        <section>
+        <Faqs/>
+      </section>
+
+      <footer>
+        <div class="footer-wrp">
+          <div class="footer-content">
+            <h3>Tailored staffing services <br> with guaranteed quality</h3>
+
+            <div>
+              <!-- <p>Quick Links</p> -->
+              <ul>
+                <li><a href="">About us</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Solutions</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="img-wrp">
+          <img src="../assets/images/twos.png" alt="">
+        </div>
+      </footer>
     </main>
   </div>
 </template>
@@ -394,6 +422,7 @@ const prevReview = () => {
 </script>
 
 <style scoped lang="scss">
+// styles for the 'tiny title in each section
 .section-ttl {
   font-size: 1.2rem;
   opacity: 0.8;
@@ -427,12 +456,14 @@ header {
   nav {
     // position: relative;
     color: black;
+    // border: 1px solid white;
     padding: 0 2rem;
     display: flex;
     align-items: center;
     .logo h3 {
       margin-right: 2rem;
-      font-size: 1.6rem;
+      margin-top: -.5rem;
+      font-size: 1.8rem;
       font-weight: 900;
     }
 
@@ -456,8 +487,12 @@ header {
       a {
         font-size: 1.4rem;
         background-color: var(--priColorGreen);
+        background-color: #f5b083;
+
+
         color: black;
         padding: 1rem 2rem;
+        font-weight: 500;
       }
     }
 
@@ -467,6 +502,80 @@ header {
       display: none;
     }
   }
+}
+
+
+footer{
+  // height: 40rem;
+  background-color: black;
+  color: white;
+  border: 1px solid transparent;
+  padding: 5rem .5rem;
+  
+  .footer-wrp{
+
+    max-width: 1500px;
+    margin: 1rem auto;
+    .footer-content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // border: 1px solid white;
+      font-size: 1.4rem;
+      h3{
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 40px;
+        opacity: .7;
+      }
+
+      div{
+        height: 20rem;
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          li{
+            list-style-type: none;
+            margin-left: -1.4rem;
+            // display: inline-block;
+            padding: .5rem 4rem;
+            padding-left: unset;
+            a{
+              color: white;
+              // text-decoration: none;
+            }
+
+          }
+        }
+      }
+    }
+  }
+  .img-wrp{
+    img{
+      opacity: .1;
+      width: 100vw;
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+
+  footer .footer-wrp .footer-content{
+    grid-template-columns: 1fr;
+
+    h3{
+      br{
+        display: none;
+      }
+    }
+    div{
+      ul{
+        padding-top: 4rem;
+      }
+    }
+  }
+  
 }
 
 .hero-section {
@@ -499,7 +608,7 @@ header {
     right: 0;
     bottom: 0;
     background-color: rgba(255, 165, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.73);
     z-index: -1;
   }
   .hs-wrp {
@@ -514,21 +623,11 @@ header {
 
   .hero-ttl {
     font-size: 9rem;
-    opacity: .8;
     line-height: 120px;
     z-index: 1;
     font-weight: 500;
-
-    // span {
-    //   &:nth-child(1) {
-    //     display: block;
-    //     padding: 1rem 0;
-    //     padding-left: 10rem;
-    //   }
-    //   &:nth-child(2) {
-    //     padding-left: 4rem;
-    //   }
-    // }
+      color: #fad6a5;
+      color: white;
   }
 
   p {
@@ -563,10 +662,9 @@ header {
 }
 
 .after-hs-section {
-  background-color: whitesmoke;
+  // background-color: whitesmoke;
   padding: 10rem 0.5rem;
-  background-color: #4b6f44;
-  background-color: #fcfbe5;
+  // background-color: #fcfbe5;
   .after-hs {
     // max-width: 1500px;
     max-width: 85vw;
@@ -598,11 +696,14 @@ header {
   .services-wrp {
     // max-width: 1500px;
     max-width: 85vw;
+    max-width: 1500px;
     margin: 0 auto;
     .services-wrp-container {
       h2 {
         padding: 0.4rem 0;
         font-size: 3.9rem;
+  color: #FF6700;
+
         opacity: 0.9;
         padding-bottom: 1.4rem;
       }
@@ -628,7 +729,32 @@ header {
           url("https://images.pexels.com/photos/7513064/pexels-photo-7513064.jpeg?auto=compress&cs=tinysrgb&w=600");
         height: 40rem;
         background-repeat: no-repeat;
+        background-size: cover;
 
+        &:nth-child(1) {
+          background-image:linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ), url("https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+        &:nth-child(2){
+          background-image:linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ), url("https://images.pexels.com/photos/1337387/pexels-photo-1337387.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+        &:nth-child(4){
+          background-image:linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ), url("https://images.pexels.com/photos/3514805/pexels-photo-3514805.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+        &:nth-child(3){
+          background-image:linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ), url("https://images.pexels.com/photos/16684609/pexels-photo-16684609/free-photo-of-man-driving-a-backhoe-on-a-construction-site.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
         p {
           font-size: 2rem;
         }
@@ -643,8 +769,11 @@ header {
 }
 
 .lt-benefits-wrapper {
-  background-color: #ffe5b4;
   background-color: #ffe5b432;
+  background-color: #ffe5b409;
+  background-color: #ffe5b410;
+    background-color: #ffe5b422;
+
   padding: 5rem 0.5rem;
   .lbw-wrp {
     max-width: 1500px;
@@ -656,6 +785,8 @@ header {
         text-align: center;
         opacity: 0.8;
         font-weight: 500;
+                color: #FF6700;
+
         font-size: 3.5rem;
       }
       .lbw-dg {
@@ -677,6 +808,9 @@ header {
           }
           .lbw-ttle {
             font-size: 2rem;
+                    color: #FF6700;
+                    color: #2e1302;
+            opacity: .8;
             font-weight: 400;
             margin-bottom: 3rem;
           }
@@ -691,20 +825,22 @@ header {
 }
 
 .testimonials {
-  padding: 5rem 0.5rem;
-  background-color: #ffe5b432;
+  padding: 5rem 0.8rem;
+    background-color: #ffe5b422;
+
 
   .test-wrp {
     font-size: 1.5rem;
     padding: 2rem 0;
     .test-wrp-container {
-      max-width: 1400px;
       max-width: 85vw;
+      max-width: 1500px;
       margin: 0 auto;
       width: 100%;
 
       h1 {
         opacity: 0.8;
+        color: #FF6700;
         font-size: 3.5rem;
         padding-bottom: 3rem;
       }
@@ -742,11 +878,15 @@ header {
             padding: 0.8rem;
           }
         }
+
+
+
         .comment {
           width: 100%;
           .comment-wrp {
             font-size: 2.4rem;
             margin-top: 3rem;
+            transition: all 2s ease;
           }
         }
       }
@@ -760,6 +900,7 @@ header {
     border-radius: 50%;
   }
 }
+
 
 @media screen and (max-width: 1100px) {
   .hero-section .hero-ttl {
@@ -843,6 +984,14 @@ header {
     }
 
 
+  }
+
+
+  // remove line break
+  .hero-section .hs-wrp .hswrp-container .hero-ttl{
+    br{
+      display: none;
+    }
   }
 
   .services .services-wrp .grid-wrp {
