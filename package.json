@@ -2,6 +2,9 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "overrides": {
+    "vue": "latest"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,7 +15,9 @@
   "dependencies": {
     "nuxt": "^3.13.0",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "pinia": "^2.1.7",
+    "@pinia/nuxt": "^0.5.1"
   },
   "devDependencies": {
     "@bootstrap-vue-next/nuxt": "^0.24.15",
