@@ -72,7 +72,7 @@ export default {
   .faq-wrp{
     max-width: 1500px;
     margin: 0 auto;
-    padding: 5rem 1.4rem;
+    padding: 5rem 0;
 
   }
 
@@ -119,6 +119,7 @@ export default {
 
 .icon {
 //   font-size: 24px;
+padding-left: 1rem;
   transition: all 0.3s ease;
 }
 
