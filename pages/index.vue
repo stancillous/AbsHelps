@@ -428,6 +428,12 @@ const prevReview = () => {
 </script>
 
 <style scoped lang="scss">
+
+section{
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
 // styles for the 'tiny title in each section
 .section-ttl {
   font-size: 1.2rem;
@@ -519,7 +525,7 @@ footer{
   background-color: black;
   color: white;
   border: 1px solid transparent;
-  padding: 5rem .5rem;
+  padding: 5rem 1.4rem;
   
   .footer-wrp{
 
@@ -701,7 +707,7 @@ footer{
 }
 
 .services {
-  padding: 8rem 1rem;
+  padding: 8rem 1.4rem;
   .services-wrp {
     // max-width: 1500px;
     max-width: 85vw;
@@ -834,13 +840,12 @@ footer{
 }
 
 .testimonials {
-  padding: 5rem 0.8rem;
+  padding: 5rem 1.4rem;
     background-color: #ffe5b422;
-
-
+    
   .test-wrp {
     font-size: 1.5rem;
-    padding: 2rem 0;
+    padding: 2rem 1.4rem;
     .test-wrp-container {
       max-width: 85vw;
       max-width: 1500px;
