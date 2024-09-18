@@ -2,18 +2,16 @@
   <div>
     <main>
 
-      <!-- <div @click="showMobileNav = !showMobileNav" class="mobile-overlay"> -->
-      <div  @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]">
+      <div  @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]"></div>
 
-
-      </div>
       <header>
         <!-- don't remove this element -->
         <div class="mobile-view-hidden"></div>
         <nav>
+
           <transition name="fade">
-            <template v-if="showLoginDiv">
-              <Login />
+            <template v-if="appStore.showLoginRegisterView">
+              <LoginRegisterView/>
             </template>
           </transition>
 
@@ -33,7 +31,8 @@
           <div class="d-flex align-items-center">
             <div class="signin-wrp">
               <!-- <a href="/">Sign in</a> -->
-              <a @click.prevent="showLoginDiv = !showLoginDiv" href="">Sign in</a>
+              <a @click.prevent="appStore.showLoginRegisterView = true" href="">Sign in</a>
+              <!-- <a @click.prevent="showLoginDiv = !showLoginDiv" href="">Sign in</a> -->
             </div>
             <div @click="showMobileNav = ! showMobileNav" class="mobile-menu-btn">
               <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="rgba(255, 255,255, .88)"></path></svg>
@@ -357,8 +356,13 @@
 </template>
 
 <script setup lang="ts">
+
+const appStore = useStore()
+
 // variable to help show/hide the login div
 const showLoginDiv = ref(false);
+
+
 
 // variable to tell if to show the mobile nav
 const showMobileNav = ref(false)
@@ -419,6 +423,8 @@ const prevReview = () => {
     currentIndex.value -= 1;
   }
 };
+
+
 </script>
 
 <style scoped lang="scss">
@@ -457,9 +463,11 @@ header {
     // position: relative;
     color: black;
     // border: 1px solid white;
+    
     padding: 0 2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     .logo h3 {
       margin-right: 2rem;
       margin-top: -.5rem;
@@ -486,6 +494,7 @@ header {
       margin-left: 2rem;
       a {
         font-size: 1.4rem;
+        border-radius: 10rem;
         background-color: var(--priColorGreen);
         background-color: #f5b083;
 
