@@ -1,63 +1,107 @@
 <template>
     <div>
 
-        <div class="login-wrp">
-            <div class="login-wrp-container">
-              <h2 class="text-center pb-4">Sign In</h2>
-              <form action="">
-                <div>
-                  <label for="email">Email</label> <br>
-                  <input type="email" name="" id="email">
+        <div v-if="appStore.showLoginRegisterView" @click="appStore.showLoginRegisterView = false" class="login-overlay"></div>
+        <!-- <template v-if="appStore.showlo"> -->
+          <div class="login-wrp">
+              <div class="login-wrp-container">
+
+                <div @click="appStore.showLoginRegisterView = false" class="close-login-wrp">
+                  <svg width="15px" height="15px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path class="icon-styleable-color" fill="rgba(0, 0, 0, .88)" fill-rule="evenodd" clip-rule="evenodd" d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"></path></svg>
                 </div>
-    
-                <div>
-                  <label for="pwd">Password</label> <br>
-                  <input type="password" id="password">
-                </div>
-                <div class="btns">
-                  <button type="submit">Sign in</button>
-                </div>
-                <div class="forgot-pwd text-center text-capitalize">
+  
+                <h2 class="text-center pb-4">Sign In</h2>
+                <form action="">
                   <div>
-                    <a class="pb-3" href="">forgot password?</a> <br>
+                    <!-- <label for="email">Email</label> <br> -->
+                    <input type="email" name="" id="email" placeholder="Email Address">
                   </div>
-                  <a href="">create an account</a>
-                </div>
-                <p class="text-center opacity-75">or</p>
-                <div class="google-signin text-center">
-                    <button type="button" class="login-with-google-btn" >
-  Sign in with Google
-</button>
-                  <!-- <p>Sign in with google</p> -->
-                </div>
-    
-              </form>
+      
+                  <div>
+                    <!-- <label for="pwd">Password</label> <br> -->
+                    <input type="password" id="password" placeholder="Password">
+                  </div>
+                  <div class="text-end">
+                    <a class="pb-3 text-decoration-underline" href="">Forgot password?</a> <br>
+                  </div>
+                  <div class="btns">
+                    <button type="submit">Sign in</button>
+                  </div>
+                  <p class="text-center opacity-75">or</p>
+                  <div class="google-signin text-center">
+                    
+                    <img width="207px" src="../assets/images/google_sso.png" alt=""> <br> <br>
+                    <img width="207px" src="../assets/images/apple_sso.png" alt="">
+                    <!-- <p>Sign in with google</p> -->
+                  </div>
+                  
+                  <div class="text-center">
+                    
+                    <p>
+                      First time here?
+                      <span style="cursor: pointer" @click="appStore.currentTab = 'registerView'" class="text-decoration-underline" href="">Create an account</span>
+                    </p>
+                  </div>
+      
+                </form>
+              </div>
             </div>
-          </div>
+
+        <!-- </template> -->
     </div>
 </template>
 
 <script setup lang="ts">
 
+const appStore = useStore()
+
+
 </script>
 
 <style scoped lang="scss">
 
+// overlay to show when login bar is shown
+.login-overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+}
+
 .login-wrp{
-  position: absolute;
+  position: fixed;
   z-index: 3;
-  top: 6rem;
-  right: 2rem;
+  top: 0;
+  top: -2rem;
+  right: 0;
   border-radius: .4rem;
   background-color: white;
   padding: 4rem 2rem;
-  width: 33rem;
+  width: 50vw;
+  height: 100vh;
+
 
   .login-wrp-container{
-    font-size: 1.3rem;
-    h2{
+    font-size: 1.4rem;
+    max-width: 380px;
+    margin: 1rem auto;
+    
 
+    .close-login-wrp{
+      position: absolute;
+      cursor: pointer;
+      top: 4rem;
+      background-color: whitesmoke;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      left: 2rem;
     }
+
     form{
 
       a{
@@ -70,54 +114,52 @@
         margin: 1.5rem 0;
         // border: 1px solid;
       }
-      label{
-        
-      }
-      input{
-        margin: 1.5rem 0;
-        margin-bottom: 3rem;
-        border: none;
-        border-bottom: 1px solid black;
-        width: 100%;
 
+      input{
+        // margin: 1rem 0;
+        margin-top: 2rem;
+        // border-bottom: 1px solid black;
+        padding: 1.8rem 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+        width: 100%;
+        
         &:focus{
           outline: none;
         }
       }
+      
+      .btns{
+        margin-top: 3rem;
+      }
       button{
         border: none;
-        border-radius: 0rem !important;
+        // border-radius: 0rem !important;
+        border-radius: 10rem;
         cursor: pointer;
-        padding: 1rem 0;
+        padding: 1.5rem 1rem;
+        font-size: 1.4rem;
         background-color: var(--priColorGreen);
+        // background-color: var(--seco);
         color: black;
         width: 100%;
         margin-bottom: 2rem;
       }
-
-      .login-with-google-btn {
-  cursor: pointer;    
-  padding: 12px 16px 12px 42px;
-  border: none;
-  border-radius: 3px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-  
-  color: #757575;
-  font-size: 14px;
-  width: 80%;
-  font-weight: 500;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
-  background-color: white;
-  background-repeat: no-repeat;
-  background-position: 12px 11px;
-
-}
+    
 
       
     }
   }
 
 }
+
+
+@media screen and (max-width: 800px) {
+
+  .login-wrp{
+    width: 100vw;
+  }
+  
+}
+
 </style>
