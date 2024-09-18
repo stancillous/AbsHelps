@@ -76,7 +76,7 @@ const appStore = useStore()
   background-color: white;
   padding: 4rem 2rem;
   width: 50vw;
-  height: 100vh;
+  height: 200vh;
 
 
   .login-wrp-container{

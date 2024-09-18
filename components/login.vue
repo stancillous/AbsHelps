@@ -81,6 +81,8 @@ const appStore = useStore()
   padding: 4rem 2rem;
   width: 50vw;
   height: 100vh;
+  height: 200vh;
+  // bottom: 8px solid red;
 
 
   .login-wrp-container{
