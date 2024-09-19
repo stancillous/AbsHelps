@@ -1,25 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sofadi+One&display=swap');
 
 :root {
   --priColorGreen: #f5b083;;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  /* font-family: "Roboto", sans-serif; */
-  font-family: "Satoshi", sans-serif;
-  width: 100vw;
+html, body {
+  /* font-family: "Satoshi", sans-serif; */
+  font-family: "Outfit", sans-serif;
+
+  /* width: 100vw; */
   overflow-x: hidden;
 }
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none !important;
+}
+
+p{
+  font-size: 15px;
 }
