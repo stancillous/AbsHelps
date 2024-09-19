@@ -2,7 +2,7 @@
   <div>
     <main>
 
-      <div  @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]"></div>
+      <div @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]"></div>
 
       <header>
         <!-- don't remove this element -->
@@ -30,9 +30,7 @@
        
           <div class="d-flex align-items-center">
             <div class="signin-wrp">
-              <!-- <a href="/">Sign in</a> -->
               <a @click.prevent="appStore.showLoginRegisterView = true" href="">Sign in</a>
-              <!-- <a @click.prevent="showLoginDiv = !showLoginDiv" href="">Sign in</a> -->
             </div>
             <div @click="showMobileNav = ! showMobileNav" class="mobile-menu-btn">
               <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="rgba(255, 255,255, .88)"></path></svg>
@@ -178,7 +176,6 @@
               including:
             </p>
           </div>
-          <!-- <div></div> -->
           <div class="grid-wrp">
             <div class="grid-det">
               <p>Housekeeping</p>
@@ -432,21 +429,8 @@ const prevReview = () => {
 
 <style scoped lang="scss">
 
-
-/* Fade transition for author and image */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
-/* Slide transition for the content */
-.slide-enter-active, .slide-leave-active {
-  transition: transform 0.5s ease;
-}
-.slide-enter, .slide-leave-to {
-  transform: translateX(100%);
+body{
+  font-family: "Roboto", sans-serif;
 }
 
 section{
@@ -594,25 +578,6 @@ footer{
 }
 
 
-@media screen and (max-width: 800px) {
-
-  footer .footer-wrp .footer-content{
-    grid-template-columns: 1fr;
-
-    h3{
-      br{
-        display: none;
-      }
-    }
-    div{
-      ul{
-        padding-top: 4rem;
-      }
-    }
-  }
-  
-}
-
 .hero-section {
   position: relative;
   height: 90vh;
@@ -715,6 +680,9 @@ footer{
           display: flex;
           align-items: center;
 
+          p{
+            font-size: 1.5rem;
+          }
           a {
             // color: var(--priColorGreen);
             color: black;
@@ -947,7 +915,23 @@ footer{
     font-size: 4rem;
     line-height: 50px;
   }
+  
+    footer .footer-wrp .footer-content{
+      grid-template-columns: 1fr;
+  
+      h3{
+        br{
+          display: none;
+        }
+      }
+      div{
+        ul{
+          padding-top: 4rem;
+        }
+      }
+    }
 }
+
 
 // show mobile menu here
 @media screen and (max-width: 767px) {
