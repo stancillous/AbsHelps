@@ -1,67 +1,95 @@
 <template>
-    <div>
+  <div>
+    <div
+      v-if="appStore.showLoginRegisterView"
+      @click="appStore.showLoginRegisterView = false"
+      class="login-overlay"
+    ></div>
+    <!-- <template v-if="appStore.showlo"> -->
+    <div class="login-wrp">
+      <div class="login-wrp-container">
+        <div
+          @click="appStore.showLoginRegisterView = false"
+          class="close-login-wrp"
+        >
+          <svg
+            width="15px"
+            height="15px"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+          >
+            <path
+              class="icon-styleable-color"
+              fill="rgba(0, 0, 0, .88)"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"
+            ></path>
+          </svg>
+        </div>
 
-        <div v-if="appStore.showLoginRegisterView" @click="appStore.showLoginRegisterView = false" class="login-overlay"></div>
-        <!-- <template v-if="appStore.showlo"> -->
-          <div class="login-wrp">
-              <div class="login-wrp-container">
+        <h2 class="text-center pb-4">Sign In</h2>
+        <form action="">
+          <div>
+            <!-- <label for="email">Email</label> <br> -->
+            <input
+              type="email"
+              name=""
+              id="email"
+              placeholder="Email Address"
+            />
+          </div>
 
-                <div @click="appStore.showLoginRegisterView = false" class="close-login-wrp">
-                  <svg width="15px" height="15px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path class="icon-styleable-color" fill="rgba(0, 0, 0, .88)" fill-rule="evenodd" clip-rule="evenodd" d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"></path></svg>
-                </div>
-  
-                <h2 class="text-center pb-4">Sign In</h2>
-                <form action="">
-                  <div>
-                    <!-- <label for="email">Email</label> <br> -->
-                    <input type="email" name="" id="email" placeholder="Email Address">
-                  </div>
-      
-                  <div>
-                    <!-- <label for="pwd">Password</label> <br> -->
-                    <input type="password" id="password" placeholder="Password">
-                  </div>
-                  <div class="text-end">
-                    <a class="pb-3 text-decoration-underline" href="">Forgot password?</a> <br>
-                  </div>
-                  <div class="btns">
-                    <button type="submit">Sign in</button>
-                  </div>
-                  <p class="text-center opacity-75">or</p>
-                  <div class="google-signin text-center">
-                    
-                    <img width="207px" src="../assets/images/google_sso.png" alt=""> <br> <br>
-                    <img width="207px" src="../assets/images/apple_sso.png" alt="">
-                    <!-- <p>Sign in with google</p> -->
-                  </div>
-                  
-                  <div class="text-center">
-                    
-                    <p>
-                      First time here?
-                      <span style="cursor: pointer" @click="appStore.currentTab = 'registerView'" class="text-decoration-underline" href="">Create an account</span>
-                    </p>
-                  </div>
-      
-                </form>
-              </div>
-            </div>
+          <div>
+            <!-- <label for="pwd">Password</label> <br> -->
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <div class="text-end">
+            <a class="pb-3 text-decoration-underline" href=""
+              >Forgot password?</a
+            >
+            <br />
+          </div>
+          <div class="btns">
+            <button type="submit">Sign in</button>
+          </div>
+          <p class="text-center opacity-75">or</p>
+          <div class="google-signin text-center">
 
-        <!-- </template> -->
+           <GoogleAuth/>
+           <AppleAuth/>
+ 
+
+          </div>
+
+          <div class="text-center">
+            <p>
+              First time here?
+              <span
+                style="cursor: pointer"
+                @click="appStore.currentTab = 'registerView'"
+                class="text-decoration-underline"
+                href=""
+                >Create an account</span
+              >
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
+
+    <!-- </template> -->
+  </div>
 </template>
 
 <script setup lang="ts">
-
-const appStore = useStore()
-
-
+const appStore = useStore();
 </script>
 
 <style scoped lang="scss">
-
 // overlay to show when login bar is shown
-.login-overlay{
+.login-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -70,13 +98,14 @@ const appStore = useStore()
   width: 100vw;
 }
 
-.login-wrp{
+
+.login-wrp {
   position: fixed;
   z-index: 3;
   top: 0;
   top: -2rem;
   right: 0;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   background-color: white;
   padding: 4rem 2rem;
   width: 50vw;
@@ -84,14 +113,12 @@ const appStore = useStore()
   height: 200vh;
   // bottom: 8px solid red;
 
-
-  .login-wrp-container{
+  .login-wrp-container {
     font-size: 1.4rem;
     max-width: 380px;
-    margin: 1rem auto;
-    
+    margin: 6rem auto;
 
-    .close-login-wrp{
+    .close-login-wrp {
       position: absolute;
       cursor: pointer;
       top: 4rem;
@@ -104,20 +131,19 @@ const appStore = useStore()
       left: 2rem;
     }
 
-    form{
-
-      a{
+    form {
+      a {
         color: black;
-        &:hover{
+        &:hover {
           text-decoration: underline !important;
         }
       }
-      div{
+      div {
         margin: 1.5rem 0;
         // border: 1px solid;
       }
 
-      input{
+      input {
         // margin: 1rem 0;
         margin-top: 2rem;
         // border-bottom: 1px solid black;
@@ -125,16 +151,16 @@ const appStore = useStore()
         border: 1px solid rgba(0, 0, 0, 0.5);
         border-radius: 1rem;
         width: 100%;
-        
-        &:focus{
+
+        &:focus {
           outline: none;
         }
       }
-      
-      .btns{
+
+      .btns {
         margin-top: 3rem;
       }
-      button{
+      button {
         border: none;
         // border-radius: 0rem !important;
         border-radius: 10rem;
@@ -147,21 +173,13 @@ const appStore = useStore()
         width: 100%;
         margin-bottom: 2rem;
       }
-    
-
-      
     }
   }
-
 }
-
 
 @media screen and (max-width: 800px) {
-
-  .login-wrp{
+  .login-wrp {
     width: 100vw;
   }
-  
 }
-
 </style>
