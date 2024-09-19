@@ -8,7 +8,7 @@
   
   <div v-for="faq in faqs" :key="faq.answer" class="faq-container">
     <div class="question">
-      <p>{{faq.question}}</p>
+      <h3>{{faq.question}}</h3>
       <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="0.9600000000000002" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
     </div>
     <div class="answercont">
@@ -125,6 +125,11 @@ const faqs = [
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+
+  h3{
+  font-size: 2.2rem;
+  font-weight: 400;
+  }
 }
 
 .question svg{
@@ -149,6 +154,10 @@ const faqs = [
   font-size: 1.7rem;
   opacity: .9;
 //   line-height: 1.5rem;
+
+  p{
+    font-size: 1.8rem;
+  }
 }
 
 .question.active + .answercont {
