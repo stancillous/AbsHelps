@@ -13,7 +13,7 @@
 
 html, body {
   /* font-family: "Satoshi", sans-serif; */
-  font-family: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif !important;
 
   /* width: 100vw; */
   overflow-x: hidden;
