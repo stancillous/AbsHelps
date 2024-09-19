@@ -288,7 +288,7 @@
               </div>
               <div class="col-md-6 comment">
                 <svg
-                  width="24px"
+                width="24px"
                   height="24px"
                   viewBox="0 0 16 16"
                   fill="none"
@@ -314,17 +314,20 @@
                   </g>
                 </svg>
 
+                <!-- <transition name="slide" mode="out-in"> -->
+
                   <div class="comment-wrp">
                     <p>
                       {{ currentReview.content }}
                     </p>
                   </div>
 
+                  
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         <section>
         <Faqs/>
@@ -428,6 +431,23 @@ const prevReview = () => {
 </script>
 
 <style scoped lang="scss">
+
+
+/* Fade transition for author and image */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Slide transition for the content */
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.5s ease;
+}
+.slide-enter, .slide-leave-to {
+  transform: translateX(100%);
+}
 
 section{
   padding-left: 1.4rem;

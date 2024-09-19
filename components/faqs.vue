@@ -1,80 +1,101 @@
 <template>
-  <section class="faq-section">
-    <div class="faq-wrp">
-      <p class="section-ttl">Got questions?</p>
+    <div class="faq-section">
+
+
+<div class="faq-wrp">
+          <p class="section-ttl">Got questions?</p>
       <h2>Get answers</h2>
-      <div v-for="(faq, index) in faqs" :key="index" class="faq-item"  @click="toggleFAQ(index)">
-        <div class="faq-question">
-          <span>{{ faq.question }}</span>
-          <span class="icon">{{ activeFAQ === index ? "-" : "+" }}</span>
-        </div>
-        <transition name="fade">
-          <div class="faq-answer-wrp">
-              <p></p>
-              <p v-if="activeFAQ === index" class="faq-answer">{{ faq.answer }}</p>
-          </div>
-        </transition>
+  
+  <div v-for="faq in faqs" :key="faq.answer" class="faq-container">
+    <div class="question">
+      <p>{{faq.question}}</p>
+      <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="0.9600000000000002" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        <p></p>
+        <p>{{faq.answer}}</p>
+
+<!-- <a href="https://blog.codepen.io/documentation/features/email-verification/#how-do-i-verify-my-email-2">How to Verify Email Docs</a> -->
       </div>
+    </div>
+  </div>
+  
+  
+</div>
+
 
     </div>
-  </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      activeFAQ: null,
-      faqs: [
-        {
-          question: "What types of staff does Absolute Helps provide?",
-          answer:
-            "We provide housekeepers, nannies, and corporate staff for various roles, including temporary, permanent, live-in, and live-out placements.",
-        },
-        {
-          question: "How does the vetting process work?",
-          answer:
-            "Our vetting process includes background checks, reference verification, identity checks, and in-person interviews to ensure every candidate is reliable and highly qualified.",
-        },
-        {
-          question: "Can I request temporary staff for short-term needs?",
-          answer:
-            "Yes, we offer flexible staffing options for both short-term and long-term engagements, tailored to your specific requirements.",
-        },
-        {
-          question: "What if I'm not satisfied with the candidate provided?",
-          answer:
-            "If the candidate doesn’t meet your expectations, we will work with you to find a more suitable match at no extra cost.",
-        },
-        {
-          question: "Do you provide training for your staff?",
-          answer:
-            "Yes, we invest in continuous training and development to ensure our staff are up-to-date with the latest techniques and best practices.",
-        },
-        {
-          question: "How long does the matching process take?",
-          answer:
-            "The time varies based on your specific needs, but we aim to provide you with a suitable candidate within a few days after discussing your requirements.",
-        },
-      ],
-    };
+<script setup>
+
+onMounted(()=>{
+    let question = document.querySelectorAll(".question");
+
+question.forEach(question => {
+  question.addEventListener("click", event => {
+    const active = document.querySelector(".question.active");
+    if(active && active !== question ) {
+      active.classList.toggle("active");
+      active.nextElementSibling.style.maxHeight = 0;
+    }
+    question.classList.toggle("active");
+    const answer = question.nextElementSibling;
+    if(question.classList.contains("active")){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  })
+})
+})
+
+
+// array to hold the common FAQs
+const faqs = [
+  {
+    question: "What types of staff does Absolute Helps provide?",
+    answer:
+      "We provide housekeepers, nannies, and corporate staff for various roles, including temporary, permanent, live-in, and live-out placements.",
   },
-  methods: {
-    toggleFAQ(index) {
-      this.activeFAQ = this.activeFAQ === index ? null : index;
-    },
+  {
+    question: "How does the vetting process work?",
+    answer:
+      "Our vetting process includes background checks, reference verification, identity checks, and in-person interviews to ensure every candidate is reliable and highly qualified.",
   },
-};
+  {
+    question: "Can I request temporary staff for short-term needs?",
+    answer:
+      "Yes, we offer flexible staffing options for both short-term and long-term engagements, tailored to your specific requirements.",
+  },
+  {
+    question: "What if I'm not satisfied with the candidate provided?",
+    answer:
+      "If the candidate doesn’t meet your expectations, we will work with you to find a more suitable match at no extra cost.",
+  },
+  {
+    question: "Do you provide training for your staff?",
+    answer:
+      "Yes, we invest in continuous training and development to ensure our staff are up-to-date with the latest techniques and best practices.",
+  },
+  {
+    question: "How long does the matching process take?",
+    answer:
+      "The time varies based on your specific needs, but we aim to provide you with a suitable candidate within a few days after discussing your requirements.",
+  },
+]
+
 </script>
 
-<style lang="scss">
-.faq-section {
-  .faq-wrp{
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 5rem 0;
+<style lang="scss" scoped>
 
-  }
+
+.faq-wrp{
+    max-width: 1800px;
+        margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
 
   .section-ttl {
     font-size: 1.2rem;
@@ -88,66 +109,66 @@ export default {
     opacity: 0.9;
     padding-bottom: 1.4rem;
     
-  }
-
-  .faq-answer{
-    font-size: 1.7rem;
-    padding: 1rem;
-  }
 }
 
-.faq-item {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
+.faq-container {
+  color: black;
+  border-top: 1px solid gainsboro;
+  margin: 2rem 0;
+}
+
+.question {
+  font-size: 2.2rem;
+  padding: 1.5rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-  padding: 2rem 0;
 }
 
-.faq-answer-wrp{
+.question svg{
+    transition: 0.2s ease;
+}
+
+.question.active svg {
+  transform: rotate(45deg);
+}
+
+.answercont {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.answer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+    padding-right: 3rem;
+  font-size: 1.7rem;
+  opacity: .9;
+//   line-height: 1.5rem;
 }
 
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-  font-size: 2.2rem;
-  opacity: .8;
+.question.active + .answercont {
 }
 
-.icon {
-//   font-size: 24px;
-padding-left: 1rem;
-  transition: all 0.3s ease;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
 
 
 @media screen and (max-width: 800px) {
 
-  .faq-answer-wrp{
+  .answer{
     display: grid;
     grid-template-columns: 1fr;
 }
-    .faq-question{
-        font-size: 2rem;
+    .question{
+        font-size: 1.9rem;
     }
-    .faq-section .faq-answer{
+    .answer{
         font-size: 1.5rem;
         padding: 1rem 0;
     }
     
 }
-
 </style>
