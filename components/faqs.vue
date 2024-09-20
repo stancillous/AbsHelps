@@ -4,7 +4,7 @@
 
 <div class="faq-wrp">
           <p class="section-ttl">Got questions?</p>
-      <h2>Get answers</h2>
+      <h2>We have answers</h2>
   
   <div v-for="faq in faqs" :key="faq.answer" class="faq-container">
     <div class="question">
@@ -119,6 +119,7 @@ const faqs = [
 
 .question {
   font-size: 2.2rem;
+  opacity: .8;
   padding: 1.5rem 0;
   position: relative;
   display: flex;
