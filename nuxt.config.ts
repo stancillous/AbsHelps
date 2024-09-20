@@ -12,4 +12,12 @@ export default defineNuxtConfig({
   ],
   // css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/styles/main.css"],
   css: ["~/assets/styles/main.css", "bootstrap/dist/css/bootstrap.min.css"],
+  app: {
+    head: {
+      title: "Absolute Helps",
+      htmlAttrs: {
+        lang: "en"
+      }
+    }
+  }
 });
