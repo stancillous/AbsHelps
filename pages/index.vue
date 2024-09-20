@@ -16,7 +16,7 @@
           </transition>
 
           <div class="logo">
-            <h3 class="text-light">A.Helps</h3>
+            <h3 class="logo-txt text-light">A.Helps</h3>
           </div>
 
           <div :class="['menu-links', {'show-mobile-menu': showMobileNav}]">
@@ -470,47 +470,52 @@ header {
   justify-content: space-between;
 
   nav {
-    // position: relative;
     color: black;
-    // border: 1px solid white;
-    
     padding: 0 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    .logo h3 {
-      margin-right: 2rem;
-      margin-top: -.5rem;
-      font-size: 1.8rem;
-      font-weight: 900;
+    .logo{
+      display: grid;
+      place-items: center;
+      .logo-txt {
+        margin-right: 2rem;
+        font-size: 1.8rem;
+        font-weight: 900;
+      }
     }
 
     .menu-links {
-      ul li {
-        all: unset;
-        list-style: none;
-        display: inline-block;
-        opacity: 0.8;
-        padding: 0 1rem;
-        font-size: 1.4rem;
 
-        a {
-          color: white;
+      ul{
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        li {
+          all: unset;
+          list-style: none;
+          display: inline-block;
+          opacity: 0.8;
+          padding: 0 1rem;
+          font-size: 1.4rem;
+  
+          a {
+            color: white;
+            font-size: 1.7rem;
+  
+          }
         }
       }
     }
     .signin-wrp {
-      margin-top: -0.5rem;
       margin-left: 2rem;
       a {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         border-radius: 10rem;
         background-color: var(--priColorGreen);
         background-color: #f5b083;
-
-
         color: black;
-        padding: 1rem 2rem;
+        padding: .4rem 2rem;
         font-weight: 500;
       }
     }
@@ -561,6 +566,8 @@ footer{
             padding-left: unset;
             a{
               color: white;
+              font-size: 1.5rem;
+              opacity: .8;
               // text-decoration: none;
             }
 
@@ -681,12 +688,11 @@ footer{
           align-items: center;
 
           p{
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
           }
           a {
-            // color: var(--priColorGreen);
             color: black;
-            // color: orange;
+            font-size: 1.7rem;
           }
         }
       }
@@ -709,9 +715,6 @@ footer{
 
         opacity: 0.9;
         padding-bottom: 1.4rem;
-      }
-      p {
-        font-size: 1.5rem;
       }
     }
     .grid-wrp {
@@ -819,7 +822,8 @@ footer{
           }
 
           .lbw-p {
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
+            opacity: .8;
           }
         }
       }
@@ -886,9 +890,12 @@ footer{
         .comment {
           width: 100%;
           .comment-wrp {
-            font-size: 2.4rem;
             margin-top: 3rem;
             transition: all 2s ease;
+
+            p{
+              font-size: 2.4rem;
+            }
           }
         }
       }
@@ -1045,8 +1052,8 @@ footer{
 
     .comment {
       margin-bottom: 4rem;
-      .comment-wrp {
-        font-size: 1.8rem;
+      .comment-wrp p{
+        font-size: 1.7rem;
       }
     }
   }
