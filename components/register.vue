@@ -83,6 +83,12 @@ const appStore = useStore();
 </script>
 
 <style scoped lang="scss">
+
+p{
+  font-size: 1.6rem;
+}
+
+
 // overlay to show when login bar is shown
 .login-overlay {
   background-color: rgba(0, 0, 0, 0.5);
