@@ -271,7 +271,6 @@ footer{
             height: 100vh;
             width: 70vw;
             background-color: white;
-            background-color: rgb(255, 244, 222);
             // display: none;
             transform: translateX(100%);
             opacity: 0;
@@ -291,12 +290,12 @@ footer{
                 position: absolute;
                 padding: .4rem;
                 cursor: pointer;
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 2.3rem;
+                height: 2.3rem;
                 border-radius: 50%;
-                background-color: gainsboro;
+                background-color: rgba(220, 220, 220, 0.424);
                 right: 2rem;
-                top: 4rem;
+                top: 4.5rem;
               }
               li{
                 padding: 1.4rem 0;
