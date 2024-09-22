@@ -175,8 +175,8 @@ const faqs = [
     .question{
       padding: 2rem 0;
         h3{
-          font-size: 2.5rem;
-
+          font-size: 2.2rem;
+          opacity: .9;
         }
     }
     .answer{
