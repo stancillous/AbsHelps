@@ -13,11 +13,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "gsap": "^3.12.5",
     "nuxt": "^3.13.0",
-    "vue": "latest",
-    "vue-router": "latest",
     "pinia": "^2.1.7",
-    "@pinia/nuxt": "^0.5.1"
+    "vue": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
     "@bootstrap-vue-next/nuxt": "^0.24.15",
