@@ -31,3 +31,10 @@ a {
 p{
   font-size: 2.4rem;
 }
+
+@media screen and (max-width: 800px) {
+  p{
+    font-size: 1.8rem !important;
+  }
+  
+}
