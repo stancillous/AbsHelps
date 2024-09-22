@@ -1,7 +1,11 @@
 <template>
     <div>
 
-              <header>
+            <div
+        @click="showMobileNav = !showMobileNav"
+        :class="['mobile-overlay', { hideMobileOverlay: !showMobileNav }]"
+      ></div>
+        <header>
         <!-- don't remove this element -->
         <div class="mobile-view-hidden"></div>
         <nav>
@@ -17,12 +21,32 @@
           </div>
 
           <div :class="['menu-links', {'show-mobile-menu': showMobileNav}]">
+            
             <ul>
               <li><a href="">About</a></li>
               <li><a href="">Services</a></li>
               <li><a href="">Solutions</a></li>
               <li><a href="">Process</a></li>
+
+ <svg
+  @click="showMobileNav = ! showMobileNav"
+            width="20px"
+            height="20px"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+          >
+            <path
+              class="icon-styleable-color"
+              fill="rgba(0, 0, 0, .88)"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"
+            ></path>
+          </svg>
             </ul>
+
+            
           </div>
        
           <div class="d-flex align-items-center">
@@ -75,6 +99,22 @@ const showMobileNav = ref(false)
 
 <style scoped lang="scss">
 
+
+// to be shown on mobile when user clicks on menu btn
+.mobile-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+}
+
+// class to hide mobile overlay
+.hideMobileOverlay {
+  display: none;
+}
+
+
 header {
   height: 5rem;
   z-index: 5;
@@ -106,6 +146,11 @@ header {
         height: 100%;
         display: flex;
         align-items: center;
+
+
+        svg{
+          display: none;
+        }
 
         li {
           all: unset;
@@ -226,22 +271,39 @@ footer{
             height: 100vh;
             width: 70vw;
             background-color: white;
+            background-color: rgb(255, 244, 222);
             // display: none;
             transform: translateX(100%);
             opacity: 0;
             transition: all .4s ease-in-out;
+
       
             ul{
               height: 80%;
-
+              align-items: start;
               padding-top: 7rem;
               display: flex;
               flex-direction: column;
-              
+              position: relative;
+
+              svg{
+                display: block;
+                position: absolute;
+                padding: .4rem;
+                cursor: pointer;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-color: gainsboro;
+                right: 2rem;
+                top: 4rem;
+              }
               li{
                 padding: 1.4rem 0;
                 a{
+                  // font-size: 2rem;
                   color: black;
+                  text-transform: uppercase;
                 }
               }
       
