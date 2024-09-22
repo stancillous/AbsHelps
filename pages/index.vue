@@ -151,10 +151,6 @@
         </div>
       </section>
 
-      <!-- <section>
-        <ImgWrp/>
-      </section> -->
-
       <section class="services">
         <div class="services-wrp">
           <div class="services-wrp-container">
@@ -719,7 +715,7 @@ section {
             font-weight: 400;
           }
           .lbw-p {
-            font-size: 2rem;
+            font-size: 1.9rem;
             opacity: 0.8;
           }
         }
