@@ -1,16 +1,13 @@
 <template>
   <div>
-    <main>
-
-      <div @click="showMobileNav = !showMobileNav" :class="['mobile-overlay', { 'hideMobileOverlay': !showMobileNav}]"></div>
-
+    <main class="main-wrp">
 
       <section class="hero-section">
         <div class="hs-wrp">
           <div class="hswrp-container">
             <h1 class="hero-ttl">
-              Tailored staffing services <br>
-              with guaranteed quality
+              <span class="first-ttl"> Tailored staffing services <br /> </span>
+              <span class="second-ttl">with guaranteed quality</span>
             </h1>
             <!-- <h1 class="hero-ttl">
               Tailored
@@ -20,7 +17,6 @@
           </div>
         </div>
       </section>
-
 
       <section class="after-hs-section">
         <div class="after-hs">
@@ -35,7 +31,7 @@
               </div>
               <div class="col-md-6 dets">
                 <div>
-                  <h2 class="mb-4">Let us turn your vision into reality</h2>
+                  <h2 class="mb-5">Let us turn your vision into reality</h2>
                   <p>
                     At Absolute Helps, we provide trusted, professional domestic
                     and corporate staffing solutions tailored to your unique
@@ -44,7 +40,7 @@
                     you receive only the most qualified and reliable candidates.
                   </p>
                   <div class="link mt-5">
-                    <a class="text-decoration-underline" href="">Learn more</a>
+                    <a class="text-decoration-underline" href="">Get started</a>
                   </div>
                 </div>
               </div>
@@ -56,17 +52,23 @@
       <section class="lt-benefits-wrapper">
         <div class="lbw-wrp">
           <div class="lbw-container">
-            <h1 class="section-ttl text-center">Key advantages</h1>
-            <h2 class="lbw-wrp-header text-center mb-5">
-              Choose Quality <br />
-              with Absolute Helps
-            </h2>
-            <div class="lbw-dg container">
+            <div class="pinned">
+              <h1 class="section-ttl">Key advantages</h1>
+              <h2 class="lbw-wrp-header mb-5">
+                Choose Quality <br />
+                with Absolute Helps
+              </h2>
+            </div>
+            <div class="lbw-dg">
               <div class="row">
-                <div class="col-lg-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Cost-effective & Flexible Solutions</p>
                     <p class="lbw-p">
+                      Finding a balance between affordability and quality is a
+                      challenge that many seek in a housekeeping and childcare
+                      agency. <br />
+                      <br />
                       Absolute Helps manages to strike this balance by offering
                       competitive pricing without compromising service
                       standards.
@@ -74,10 +76,14 @@
                   </div>
                 </div>
 
-                <div class="col-lg-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Client-Cetric Approach</p>
                     <p class="lbw-p">
+                      Central to the philosophy of Absolute Help’s is a
+                      client-centric approach that prioritizes the unique
+                      requirements and preferences of each client. <br />
+                      <br />
                       Tailored solutions are a hallmark of our service,
                       recognizing that every housekeeping or childcare job has
                       its own set of demands.
@@ -85,7 +91,7 @@
                   </div>
                 </div>
 
-                <div class="col-lg-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Reliability & Availability</p>
                     <p class="lbw-p">
@@ -96,32 +102,46 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Training and Quality Assurance</p>
                     <p class="lbw-p">
                       We, in collaboration with relevant coaching and training
                       programs, place a significant emphasis on continuous
-                      training and development.
+                      training and development. <br />
+                      <br />
+                      Housekeepers and other staff are kept up-to-date with the
+                      latest cleaning techniques, products, and health and
+                      safety regulations as well as best practice in employment
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Extensive Range of Services</p>
                     <p class="lbw-p">
                       The array of services provided by Absolute Helps is
                       extensive, catering to a variety of clients and settings.
+                      <br />
+                      <br />
+                      This can range from domestic housekeeping tasks such as
+                      cleaning, laundry, and ironing and child care services to
+                      more specialized services like deep cleans or event
+                      preparation and clean-up
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4 lbw-b">
+                <div class="lbw-b">
                   <div class="grid-ctr">
                     <p class="lbw-ttle">Training and Quality Assurance</p>
                     <p class="lbw-p">
                       We, in collaboration with relevant coaching and training
                       programs place a significant emphasis on continuous
-                      training and development.
+                      training and development. <br />
+                      <br />
+                      Housekeepers and other staff are kept up-to-date with the
+                      latest cleaning techniques, products, and health and
+                      safety regulations as well as best practice in employment
                     </p>
                   </div>
                 </div>
@@ -130,6 +150,10 @@
           </div>
         </div>
       </section>
+
+      <!-- <section>
+        <ImgWrp/>
+      </section> -->
 
       <section class="services">
         <div class="services-wrp">
@@ -142,22 +166,42 @@
             </p>
           </div>
           <div class="grid-wrp">
-            <div class="grid-det">
-              <p>Housekeeping</p>
-              <a class="text-decoration-underline" href="">Learn more</a>
-            </div>
-            <div class="grid-det">
-              <p>Childcare services</p>
-              <a class="text-decoration-underline" href="">Learn more</a>
-            </div>
-            <div class="grid-det">
-              <p>Temporary & permanent staff</p>
-              <a class="text-decoration-underline" href="">Learn more</a>
-            </div>
-            <div class="grid-det">
-              <p>Corporate staffing solutions</p>
-              <a class="text-decoration-underline" href="">Learn more</a>
-            </div>
+              <div class="grid-det">
+                <p>Housekeeping</p>
+                <div class="d-flex">
+                  <a class="grid-md" href="">Learn more</a>
+                  <a class="grid-md" href="">Find work</a>
+                </div>
+              </div>
+              <div class="grid-det">
+                <p>Childcare services</p>
+                <div class="d-flex">
+                  <a class="grid-md" href="">Learn more</a>
+                  <a class="grid-md" href="">Find work</a>
+                </div>
+              </div>
+              <div class="grid-det">
+                <p>Temporary & permanent staff</p>
+                <div class="d-flex">
+                  <a class="grid-md" href="">Learn more</a>
+                  <a class="grid-md" href="">Find work</a>
+                </div>
+              </div>
+              <div class="grid-det">
+                <p>Corporate staffing solutions</p>
+                <div class="d-flex">
+                  <a class="grid-md" href="">Learn more</a>
+                  <a class="grid-md" href="">Find work</a>
+                </div>
+              </div>
+              <div class="grid-det">
+                <p>Corporate staffing solutions</p>
+                <div class="d-flex">
+                  <a class="grid-md" href="">Learn more</a>
+                  <a class="grid-md" href="">Find work</a>
+                </div>
+              </div>
+
           </div>
         </div>
       </section>
@@ -250,7 +294,7 @@
               </div>
               <div class="col-md-6 comment">
                 <svg
-                width="24px"
+                  width="24px"
                   height="24px"
                   viewBox="0 0 16 16"
                   fill="none"
@@ -278,32 +322,52 @@
 
                 <!-- <transition name="slide" mode="out-in"> -->
 
-                  <div class="comment-wrp">
-                    <p>
-                      {{ currentReview.content }}
-                    </p>
-                  </div>
-
-                  
+                <div class="comment-wrp">
+                  <p>
+                    {{ currentReview.content }}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-
-        <section>
-        <Faqs/>
+        </div>
       </section>
 
-
+      <section>
+        <Faqs />
+      </section>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 // variable to tell if to show the mobile nav
-const showMobileNav = ref(false)
+const showMobileNav = ref(false);
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+
+  let mm = gsap.matchMedia()
+
+
+  mm.add("(min-width: 800px)", ()=>{
+    
+    ScrollTrigger.create({
+      trigger: ".lbw-wrp",
+      start: "top 20%",
+      end: "bottom 40%",
+      pin: ".pinned",
+      pinSpacing: false,
+    });
+  })
+
+
+});
+
 
 
 // holds the user testimonials
@@ -361,39 +425,19 @@ const prevReview = () => {
     currentIndex.value -= 1;
   }
 };
-
-
 </script>
 
 <style scoped lang="scss">
-
-
-section{
-  padding-left: 1.4rem;
-  padding-right: 1.4rem;
+section {
+  padding-left: var(--sectionPaddingX) !important;
+  padding-right: var(--sectionPaddingX) !important;
 }
 
 // styles for the 'tiny title in each section
 .section-ttl {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   opacity: 0.8;
 }
-
-// to be shown on mobile when user clicks on menu btn
-.mobile-overlay{
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 3;
-  height: 100vh;
-  width: 100vw;
-}
-
-// class to hide mobile overlay
-.hideMobileOverlay{
-    display: none;
-
-}
-
 
 .hero-section {
   position: relative;
@@ -443,8 +487,8 @@ section{
     line-height: 120px;
     z-index: 1;
     font-weight: 500;
-      color: #fad6a5;
-      color: white;
+    color: #fad6a5;
+    color: white;
   }
 
   p {
@@ -479,26 +523,34 @@ section{
 }
 
 .after-hs-section {
-  // background-color: whitesmoke;
   padding: 10rem 0.5rem;
-  // background-color: #fcfbe5;
   .after-hs {
-    // max-width: 1500px;
-    max-width: 85vw;
+    max-width: 1600px;
+    // max-width: ;
     margin: 0 auto;
     font-size: 1.5rem;
     .container {
       .row {
         .img-wrp {
           margin-bottom: 5rem;
+          height: 40rem;
+          // width: 100%;
+
+          img {
+            object-fit: cover;
+            height: 100%;
+          }
         }
         .dets {
           padding-left: 2rem;
           display: flex;
           align-items: center;
 
-          p{
-            // font-size: 1.5rem;
+          h2 {
+            font-size: 2.3rem;
+          }
+          p {
+            font-size: 1.9rem;
           }
           a {
             color: black;
@@ -513,71 +565,115 @@ section{
 .services {
   padding: 8rem 1.4rem;
   .services-wrp {
-    // max-width: 1500px;
-    max-width: 85vw;
-    max-width: 1500px;
+    max-width: 1600px;
     margin: 0 auto;
     .services-wrp-container {
+      margin-bottom: 3rem;
       h2 {
         padding: 0.4rem 0;
         font-size: 3.9rem;
-  color: #FF6700;
-
+        color: #ff6700;
         opacity: 0.9;
         padding-bottom: 1.4rem;
       }
+
+      p {
+        font-size: 2rem;
+      }
     }
     .grid-wrp {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 2rem;
+      // display: grid;
+      // grid-template-columns: 1fr 1fr;
+      // grid-gap: 2rem;
+      display: flex;
+      scroll-behavior: smooth;
+      overflow-x: scroll;
+    /* width */
+    &::-webkit-scrollbar {
+      width: 20px;
+      height: 5px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      //   background: red;
+      border-radius: 10px;
+    }
+
       .grid-det {
+        // margin-right: -15rem;
+        // width: 550px;
+                scroll-snap-align: center; /* Ensure smooth snapping */
+
         display: flex;
+        margin-right: 2rem;
         flex-direction: column;
         justify-content: space-between;
         padding: 1.5rem;
         color: white;
-        // margin: 0 1rem;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-          ),
-          url("https://images.pexels.com/photos/7513064/pexels-photo-7513064.jpeg?auto=compress&cs=tinysrgb&w=600");
-        height: 40rem;
+        min-width: 48rem;
+        height: 60rem;
+        border-radius: 1.5rem;
         background-repeat: no-repeat;
         background-size: cover;
 
         &:nth-child(1) {
-          background-image:linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ), url("https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600");
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url("https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg?auto=compress&cs=tinysrgb&w=600");
+          // url("https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=600");
         }
-        &:nth-child(2){
-          background-image:linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ), url("https://images.pexels.com/photos/1337387/pexels-photo-1337387.jpeg?auto=compress&cs=tinysrgb&w=600");
+        &:nth-child(2) {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url("https://images.pexels.com/photos/298825/pexels-photo-298825.jpeg?auto=compress&cs=tinysrgb&w=600");
+          // url("https://images.pexels.com/photos/1337387/pexels-photo-1337387.jpeg?auto=compress&cs=tinysrgb&w=600");
         }
-        &:nth-child(4){
-          background-image:linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ), url("https://images.pexels.com/photos/3514805/pexels-photo-3514805.jpeg?auto=compress&cs=tinysrgb&w=600");
+        &:nth-child(3) {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url("https://images.pexels.com/photos/4252142/pexels-photo-4252142.jpeg?auto=compress&cs=tinysrgb&w=600");
+          // url("https://images.pexels.com/photos/16684609/pexels-photo-16684609/free-photo-of-man-driving-a-backhoe-on-a-construction-site.jpeg?auto=compress&cs=tinysrgb&w=600");
         }
-        &:nth-child(3){
-          background-image:linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ), url("https://images.pexels.com/photos/16684609/pexels-photo-16684609/free-photo-of-man-driving-a-backhoe-on-a-construction-site.jpeg?auto=compress&cs=tinysrgb&w=600");
+        &:nth-child(4) {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url("https://images.pexels.com/photos/839443/pexels-photo-839443.jpeg?auto=compress&cs=tinysrgb&w=600");
+          // url("https://images.pexels.com/photos/3514805/pexels-photo-3514805.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+        &:nth-child(5) {
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.7)
+            ),
+            url("https://images.pexels.com/photos/4239035/pexels-photo-4239035.jpeg?auto=compress&cs=tinysrgb&w=600");
         }
         p {
           font-size: 2rem;
         }
         a {
-          text-decoration: underline;
           color: white;
           font-size: 1.5rem;
+          border-radius: 10rem;
+          padding: 1rem 2rem;
+          // width: 16rem;
+          font-size: 1.6rem;
+          text-align: center;
+          border: 1px solid white;
+          margin-right: 1rem;
+          &:nth-child(1){
+            background-color: white;
+            color: black;
+
+          }
         }
       }
     }
@@ -585,55 +681,46 @@ section{
 }
 
 .lt-benefits-wrapper {
-  background-color: #ffe5b432;
-  background-color: #ffe5b409;
-  background-color: #ffe5b410;
-    background-color: #ffe5b422;
+  background-color: #f0d8ad22;
+  background-color: white;
 
   padding: 5rem 0.5rem;
   .lbw-wrp {
-    max-width: 1500px;
-    padding: 0 2rem;
+    max-width: 1600px;
+    // padding: 0 2rem;
     margin: 8rem auto;
-    margin-top: 16rem;
     .lbw-container {
+      display: grid;
+      grid-template-columns: 60% 40%;
+
+      .pinned {
+        height: 20rem;
+      }
       .lbw-wrp-header {
-        text-align: center;
+        // text-align: center;
         opacity: 0.8;
         font-weight: 500;
-                color: #FF6700;
-
+        color: #ff6700;
         font-size: 3.5rem;
       }
       .lbw-dg {
         .lbw-b {
-          padding: 3rem 1rem;
-          height: 30rem;
           border: 1px solid rgba(220, 220, 220, 0.3);
-          // margin: 2rem 1rem ;
-          // max-width: 35rem;
-          // width: ;
           display: grid;
-          place-items: center;
-          text-align: center;
-
+          margin-bottom: 8rem;
           .grid-ctr {
             display: flex;
             flex-direction: column;
             height: 100%;
           }
           .lbw-ttle {
-            font-size: 2rem;
-                    color: #FF6700;
-                    color: #2e1302;
-            opacity: .8;
+            font-size: 2.3rem;
+            color: #2e1302;
             font-weight: 400;
-            margin-bottom: 3rem;
           }
-
           .lbw-p {
-            // font-size: 1.4rem;
-            opacity: .8;
+            font-size: 2rem;
+            opacity: 0.8;
           }
         }
       }
@@ -643,8 +730,7 @@ section{
 
 .testimonials {
   padding: 5rem 1.4rem;
-    background-color: #ffe5b422;
-    
+  background-color: #ffe5b422;
   .test-wrp {
     font-size: 1.5rem;
     padding: 2rem 1.4rem;
@@ -656,7 +742,7 @@ section{
 
       h1 {
         opacity: 0.8;
-        color: #FF6700;
+        color: #ff6700;
         font-size: 3.5rem;
         padding-bottom: 3rem;
       }
@@ -695,15 +781,13 @@ section{
           }
         }
 
-
-
         .comment {
           width: 100%;
           .comment-wrp {
             margin-top: 3rem;
             transition: all 2s ease;
 
-            p{
+            p {
               font-size: 2.4rem;
             }
           }
@@ -720,8 +804,10 @@ section{
   }
 }
 
-
 @media screen and (max-width: 1100px) {
+  // .lt-benefits-wrapper .lbw-wrp .lbw-container{
+  //   grid-template-columns: 1fr;
+  // }
   .hero-section .hero-ttl {
     font-size: 6rem;
     line-height: 70px;
@@ -732,40 +818,30 @@ section{
     font-size: 4rem;
     line-height: 50px;
   }
-  
-}
 
+  .lt-benefits-wrapper .lbw-wrp .lbw-container{
+    grid-template-columns: 1fr;
+
+    .pinned{
+      height: auto;
+      padding: 2rem 0;
+    }
+  }
+}
 
 // show mobile menu here
 @media screen and (max-width: 767px) {
-
-
   // remove line break
-  .hero-section .hs-wrp .hswrp-container .hero-ttl{
-    br{
+  .hero-section .hs-wrp .hswrp-container .hero-ttl {
+    br {
       display: none;
     }
   }
 
   .services .services-wrp .grid-wrp {
-    display: flex;
-    overflow-x: scroll;
-
-    /* width */
-    &::-webkit-scrollbar {
-      width: 20px;
-      height: 5px;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      //   background: red;
-      border-radius: 10px;
-    }
-
     .grid-det {
-      min-width: 80vw;
-      
+      min-width: 30rem;
+      height: 45rem;
     }
   }
   .testimonials .test-wrp .test-wrp-container .row-wrp {
@@ -781,8 +857,8 @@ section{
 
     .comment {
       margin-bottom: 4rem;
-      .comment-wrp p{
-        font-size: 1.7rem;
+      .comment-wrp p {
+        font-size: 2rem;
       }
     }
   }
