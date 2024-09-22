@@ -92,13 +92,13 @@ const faqs = [
 
 
 .faq-wrp{
-    max-width: 1800px;
+    max-width: 1500px;
         margin: 0 auto;
     padding: 5rem 1.5rem;
 }
 
   .section-ttl {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     opacity: 0.8;
   }
 
@@ -106,30 +106,29 @@ const faqs = [
     padding: 0.4rem 0;
     font-size: 3.9rem;
     color: #FF6700;
+  padding-bottom: 5rem;
     opacity: 0.9;
-    padding-bottom: 1.4rem;
     
 }
 
 .faq-container {
   color: black;
-  border-top: 1px solid gainsboro;
-  margin: 2rem 0;
+  border-top: 1px solid rgba(0,0,0,0.3);
+  // margin: 2rem 0;
 }
 
 .question {
   font-size: 2.2rem;
   opacity: .8;
-  padding: 1.5rem 0;
+  padding: 3.5rem .1rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-
   h3{
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: 3rem;
+  font-weight: 500;
   }
 }
 
@@ -157,7 +156,8 @@ const faqs = [
 //   line-height: 1.5rem;
 
   p{
-    font-size: 1.8rem;
+    font-size: 2.4rem;
+    opacity: .8;
   }
 }
 
@@ -173,11 +173,17 @@ const faqs = [
     grid-template-columns: 1fr;
 }
     .question{
-        font-size: 1.9rem;
+      padding: 2rem 0;
+        h3{
+          font-size: 2.5rem;
+
+        }
     }
     .answer{
-        font-size: 1.5rem;
-        padding: 1rem 0;
+      padding: .2rem 0;
+    }
+    .answer p{
+        font-size: 1.8rem;
     }
     
 }
