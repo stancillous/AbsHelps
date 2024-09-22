@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Sofadi+One&display=swap');
 
 :root {
-  --priColorGreen: #f5b083;;
+  --priColorGreen: #f5b083;
+  --sectionPaddingX: 1.6rem;
 }
 
 * {
