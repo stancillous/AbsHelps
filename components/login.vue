@@ -183,6 +183,9 @@ p{
 }
 
 @media screen and (max-width: 800px) {
+  p{
+    font-size: 1.4rem !important;
+  }
   .login-wrp {
     width: 100vw;
   }
