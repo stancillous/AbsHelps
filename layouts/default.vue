@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="img-wrp">
-          <img src="../assets/images/twos.png" alt="">
+          <img src="../assets/images/two.png" alt="">
         </div>
       </footer>
     </div>
