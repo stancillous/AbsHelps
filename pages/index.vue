@@ -6,8 +6,9 @@
         <div class="hs-wrp">
           <div class="hswrp-container">
             <h1 class="hero-ttl">
-              <span class="first-ttl"> Tailored staffing services <br /> </span>
-              <span class="second-ttl">with guaranteed quality</span>
+                Tailored staffing services <br>
+                with guaranteed quality
+              
             </h1>
             <!-- <h1 class="hero-ttl">
               Tailored
@@ -20,16 +21,16 @@
 
       <section class="after-hs-section">
         <div class="after-hs">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 img-wrp">
+          <div class="container-wrp">
+            <div class="row-wrp">
+              <div class="img-wrp me-4">
                 <img
                   width="100%"
                   src="../assets/images/tools.jpeg"
                   alt="picture of a person working"
                 />
               </div>
-              <div class="col-md-6 dets">
+              <div class="dets">
                 <div>
                   <h2 class="mb-5">Let us turn your vision into reality</h2>
                   <p>
@@ -349,7 +350,6 @@ onMounted(() => {
 
   let mm = gsap.matchMedia()
 
-
   mm.add("(min-width: 800px)", ()=>{
     
     ScrollTrigger.create({
@@ -360,7 +360,6 @@ onMounted(() => {
       pinSpacing: false,
     });
   })
-
 
 });
 
@@ -484,6 +483,7 @@ section {
     z-index: 1;
     font-weight: 500;
     color: #fad6a5;
+    letter-spacing: .1rem;
     color: white;
   }
 
@@ -525,8 +525,11 @@ section {
     // max-width: ;
     margin: 0 auto;
     font-size: 1.5rem;
-    .container {
-      .row {
+    .container-wrp {
+      width: 100%;
+      .row-wrp {
+        display: grid;
+        grid-template-columns: 60% 40%;
         .img-wrp {
           margin-bottom: 5rem;
           height: 40rem;
@@ -538,7 +541,7 @@ section {
           }
         }
         .dets {
-          padding-left: 2rem;
+          // padding-left: 2rem;
           display: flex;
           align-items: center;
 
@@ -677,10 +680,8 @@ section {
 }
 
 .lt-benefits-wrapper {
-  background-color: #f0d8ad22;
   background-color: white;
-
-  padding: 5rem 0.5rem;
+  padding: 0 0.5rem;
   .lbw-wrp {
     max-width: 1600px;
     // padding: 0 2rem;
@@ -820,7 +821,15 @@ section {
     line-height: 50px;
   }
 
-  .lt-benefits-wrapper .lbw-wrp .lbw-container{
+  .after-hs-section .after-hs .container-wrp .row-wrp{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lt-benefits-wrapper  .lbw-wrp {
+    margin-top: unset;
+    margin-bottom: unset;
+ .lbw-container{
     grid-template-columns: 1fr;
 
     .pinned{
@@ -828,6 +837,8 @@ section {
       padding: 2rem 0;
     }
   }
+  }
+  
 }
 
 // show mobile menu here
