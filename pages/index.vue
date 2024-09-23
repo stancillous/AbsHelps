@@ -437,7 +437,7 @@ section {
 .hero-section {
   position: relative;
   height: 90vh;
-  height: 70vh;
+  height: 80vh;
   color: white;
   display: flex;
   padding: 0 1rem;
