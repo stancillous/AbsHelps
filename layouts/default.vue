@@ -68,8 +68,9 @@
               <footer>
         <div class="footer-wrp">
           <div class="footer-content">
-            <h3>Tailored staffing services <br> with guaranteed quality</h3>
+            <!-- <h3>Tailored staffing services <br> with guaranteed quality</h3> -->
 
+              <h3>Perfect matches. <br> Lifelong professional relationships</h3>
             <div>
               <!-- <p>Quick Links</p> -->
               <ul>
