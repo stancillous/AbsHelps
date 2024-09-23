@@ -853,7 +853,7 @@ section {
   .services .services-wrp .grid-wrp {
     .grid-det {
       min-width: 30rem;
-      height: 45rem;
+      height: 37rem;
     }
   }
   .testimonials .test-wrp .test-wrp-container .row-wrp {
