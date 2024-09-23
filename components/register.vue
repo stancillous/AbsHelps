@@ -109,7 +109,8 @@ p{
   background-color: white;
   padding: 4rem 2rem;
   width: 50vw;
-  height: 200vh;
+  height: 110vh;
+  overflow-y: scroll;
 
   .login-wrp-container {
     // border: 2px solid red;
