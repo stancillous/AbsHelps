@@ -704,6 +704,11 @@ section {
           border: 1px solid rgba(220, 220, 220, 0.3);
           display: grid;
           margin-bottom: 8rem;
+          padding: .8rem;
+          
+          &:nth-child(even){
+            background-color: rgba(245, 245, 245, 0.2)
+          }
           .grid-ctr {
             display: flex;
             flex-direction: column;
