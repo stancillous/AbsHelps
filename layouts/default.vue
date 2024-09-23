@@ -17,7 +17,9 @@
           </transition>
 
           <div class="logo">
-            <h3 class="logo-txt text-light">A.Helps</h3>
+            <NuxtLink to="/">
+              <h3 class="logo-txt text-light">A.helps</h3>
+            </NuxtLink>
           </div>
 
           <div :class="['menu-links', {'show-mobile-menu': showMobileNav}]">
@@ -136,6 +138,7 @@ header {
       .logo-txt {
         margin-right: 2rem;
         font-size: 1.8rem;
+        // text-transform: lowercase;
         font-weight: 900;
       }
     }
