@@ -850,6 +850,10 @@ section {
     }
   }
 
+  .after-hs-section .after-hs .container-wrp .row-wrp .img-wrp{
+    height: 27rem;
+  }
+
   .services .services-wrp .grid-wrp {
     .grid-det {
       min-width: 30rem;
