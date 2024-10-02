@@ -143,6 +143,7 @@ header {
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     .logo {
       display: grid;
@@ -257,7 +258,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   // show mobile menu btn
 
   header {
