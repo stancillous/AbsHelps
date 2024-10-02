@@ -1,35 +1,80 @@
 <template>
   <div>
     <main class="main-wrp">
-
       <section class="hero-section">
         <div class="hs-wrp">
           <div class="hswrp-container">
             <h1 class="hero-ttl">
-                Tailored staffing services <br>
-                with guaranteed quality
-              
+              Tailored staffing services <br />
+              with guaranteed quality
             </h1>
-            <!-- <h1 class="hero-ttl">
-              Tailored
-              <span>staffing services with</span>
-              <span>guaranteed quality</span>
-            </h1> -->
+            <div class="job-form-wrp">
+              <div class="jf-container">
+                <form
+                  action=""
+                 
+                >
+                  <div class="job-dets">
+                    <div>
+                      <label for="profession">Profession</label>
+                      <input
+                        id="profession"
+                        type="text"
+                        placeholder="Your profession"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="location">Location</label>
+                      <input
+                        id="location"
+                        type="text"
+                        placeholder="City/Department/Region"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="btnwrp">
+                    <button type="submit">
+                      <svg
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke="#ffffff"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                            stroke="#ffffff"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </g>
+                      </svg>
+                      <span class="text-light">Search</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="after-hs-section">
         <div class="after-hs">
-          <div class="container-wrp">
+          <div class="container-wrp text-center">
+            <h2 class="f-ttl">Are you a recruiter?</h2>
             <div class="row-wrp">
-              <div class="img-wrp me-4">
-                <img
-                  width="100%"
-                  src="../assets/images/tools.jpeg"
-                  alt="picture of a person working"
-                />
-              </div>
               <div class="dets">
                 <div>
                   <h2 class="mb-5">Let us turn your vision into reality</h2>
@@ -48,6 +93,59 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="services">
+        <div class="services-wrp">
+          <div class="services-wrp-container">
+            <h1 class="section-ttl">Services</h1>
+            <h2>Everything covered</h2>
+            <p>
+              We offer a wide range of staffing services to meet diverse needs,
+              including:
+            </p>
+          </div>
+          <div class="grid-wrp">
+            <div class="grid-det">
+              <p>Housekeeping</p>
+              <div class="d-flex">
+                <a class="grid-md" href="">Learn more</a>
+                <a class="grid-md" href="">Find work</a>
+              </div>
+            </div>
+            <div class="grid-det">
+              <p>Childcare services</p>
+              <div class="d-flex">
+                <a class="grid-md" href="">Learn more</a>
+                <a class="grid-md" href="">Find work</a>
+              </div>
+            </div>
+            <div class="grid-det">
+              <p>Temporary & permanent staff</p>
+              <div class="d-flex">
+                <a class="grid-md" href="">Learn more</a>
+                <a class="grid-md" href="">Find work</a>
+              </div>
+            </div>
+            <div class="grid-det">
+              <p>Corporate staffing solutions</p>
+              <div class="d-flex">
+                <a class="grid-md" href="">Learn more</a>
+                <a class="grid-md" href="">Find work</a>
+              </div>
+            </div>
+            <div class="grid-det">
+              <p>Corporate staffing solutions</p>
+              <div class="d-flex">
+                <a class="grid-md" href="">Learn more</a>
+                <a class="grid-md" href="">Find work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <Jobs />
       </section>
 
       <section class="lt-benefits-wrapper">
@@ -148,57 +246,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="services">
-        <div class="services-wrp">
-          <div class="services-wrp-container">
-            <h1 class="section-ttl">Services</h1>
-            <h2>Everything covered</h2>
-            <p>
-              We offer a wide range of staffing services to meet diverse needs,
-              including:
-            </p>
-          </div>
-          <div class="grid-wrp">
-              <div class="grid-det">
-                <p>Housekeeping</p>
-                <div class="d-flex">
-                  <a class="grid-md" href="">Learn more</a>
-                  <a class="grid-md" href="">Find work</a>
-                </div>
-              </div>
-              <div class="grid-det">
-                <p>Childcare services</p>
-                <div class="d-flex">
-                  <a class="grid-md" href="">Learn more</a>
-                  <a class="grid-md" href="">Find work</a>
-                </div>
-              </div>
-              <div class="grid-det">
-                <p>Temporary & permanent staff</p>
-                <div class="d-flex">
-                  <a class="grid-md" href="">Learn more</a>
-                  <a class="grid-md" href="">Find work</a>
-                </div>
-              </div>
-              <div class="grid-det">
-                <p>Corporate staffing solutions</p>
-                <div class="d-flex">
-                  <a class="grid-md" href="">Learn more</a>
-                  <a class="grid-md" href="">Find work</a>
-                </div>
-              </div>
-              <div class="grid-det">
-                <p>Corporate staffing solutions</p>
-                <div class="d-flex">
-                  <a class="grid-md" href="">Learn more</a>
-                  <a class="grid-md" href="">Find work</a>
-                </div>
-              </div>
-
           </div>
         </div>
       </section>
@@ -347,11 +394,9 @@ const showMobileNav = ref(false);
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+  let mm = gsap.matchMedia();
 
-  let mm = gsap.matchMedia()
-
-  mm.add("(min-width: 800px)", ()=>{
-    
+  mm.add("(min-width: 800px)", () => {
     ScrollTrigger.create({
       trigger: ".lbw-wrp",
       start: "top 20%",
@@ -359,11 +404,8 @@ onMounted(() => {
       pin: ".pinned",
       pinSpacing: false,
     });
-  })
-
+  });
 });
-
-
 
 // holds the user testimonials
 const reviews = ref([
@@ -436,8 +478,10 @@ section {
 
 .hero-section {
   position: relative;
-  height: 90vh;
   height: 80vh;
+
+  max-width: var(--sectionMaxWidth);
+  margin: 0rem auto;
   color: white;
   display: flex;
   padding: 0 1rem;
@@ -453,6 +497,7 @@ section {
     bottom: 0;
     background-image: url("../assets/images/bgimg.jpeg");
     background-size: cover;
+    border-radius: var(--sectionBorderRadius);
     background-position: center;
     z-index: -2;
   }
@@ -466,6 +511,7 @@ section {
     background-color: rgba(255, 165, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.73);
     z-index: -1;
+    border-radius: var(--sectionBorderRadius);
   }
   .hs-wrp {
     position: relative;
@@ -482,78 +528,110 @@ section {
     line-height: 120px;
     z-index: 1;
     font-weight: 500;
-    color: #fad6a5;
-    letter-spacing: .1rem;
+    opacity: 0.9;
+    letter-spacing: 0.1rem;
     color: white;
   }
 
-  p {
-    font-size: 1.6rem;
-    opacity: 0.9;
-    padding: 1rem 0;
-    max-width: 700px;
-    font-weight: 500;
-    line-height: 170%;
-    fonbuttont-size: 1.8rem;
-  }
-
-  .btns {
-    border: 1px solid;
-
-    a {
+  .job-form-wrp {
+    margin-top: 6rem;
+    .jf-container {
+      background-color: white;
+      padding: 0.6rem 0.5rem;
+      border-radius: 1.1rem;
       color: black;
-      font-size: 1.4rem;
-    }
-    .get-started {
-      background-color: greenyellow;
-      padding: 1rem 2rem;
-      font-weight: 700;
-      margin-right: 2rem;
-    }
 
-    .learn-more {
-      color: white;
-      font-weight: 700;
+      form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+      }
+      label,
+      input {
+        width: 100%;
+        padding: 0.4rem 1rem;
+        font-size: 1.5rem;
+        display: block;
+      }
+      input {
+        padding: 1rem;
+        border: none;
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+      .job-dets {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+
+        div {
+          &:nth-child(1) {
+            border-right: 1px solid gainsboro;
+          }
+        }
+      }
+
+      .btnwrp {
+        // padding: 0 1rem;
+        // width: 10rem;
+        height: 100%;
+
+        button {
+          margin: 0 1rem;
+          background-color: black;
+          padding: 0.5rem;
+          border-radius: 0.6rem;
+          border: unset;
+          display: grid;
+          place-items: center;
+          // padding: 1.5rem 2rem;
+          height: 100%;
+          font-size: 1.5rem;
+
+          span{
+            display: none;
+          }
+        }
+      }
     }
   }
+
+
 }
 
 .after-hs-section {
-  padding: 10rem 0.5rem;
+  padding: 15rem 0.5rem;
   .after-hs {
-    max-width: 1600px;
-    // max-width: ;
+    max-width: 1000px;
     margin: 0 auto;
     font-size: 1.5rem;
     .container-wrp {
+      .f-ttl {
+        font-size: 3rem;
+        color: #ff6700;
+      }
       width: 100%;
       .row-wrp {
-        display: grid;
-        grid-template-columns: 60% 40%;
-        .img-wrp {
-          margin-bottom: 5rem;
-          height: 40rem;
-          // width: 100%;
+        text-align: center;
 
-          img {
-            object-fit: cover;
-            height: 100%;
-          }
-        }
         .dets {
           // padding-left: 2rem;
           display: flex;
           align-items: center;
-
           h2 {
-            font-size: 2.3rem;
+            font-size: 4rem;
+            opacity: 0.9;
           }
           p {
-            font-size: 1.9rem;
+            // font-size: 2rem;
           }
           a {
             color: black;
-            font-size: 1.7rem;
+            font-size: 1.8rem;
           }
         }
       }
@@ -563,9 +641,15 @@ section {
 
 .services {
   padding: 8rem 1.4rem;
+  margin: 0 auto;
+  max-width: var(--sectionMaxWidth);
+  background-color: whitesmoke;
+  margin-bottom: 8rem;
+      border-radius: var(--sectionBorderRadius);
+
   .services-wrp {
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 1rem auto;
     .services-wrp-container {
       margin-bottom: 3rem;
       h2 {
@@ -576,9 +660,6 @@ section {
         padding-bottom: 1.4rem;
       }
 
-      p {
-        font-size: 2rem;
-      }
     }
     .grid-wrp {
       // display: grid;
@@ -587,22 +668,22 @@ section {
       display: flex;
       scroll-behavior: smooth;
       overflow-x: scroll;
-    /* width */
-    &::-webkit-scrollbar {
-      width: 20px;
-      height: 5px;
-    }
+      /* width */
+      &::-webkit-scrollbar {
+        width: 20px;
+        height: 5px;
+      }
 
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-      //   background: red;
-      border-radius: 10px;
-    }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        //   background: red;
+        border-radius: 10px;
+      }
 
       .grid-det {
         // margin-right: -15rem;
         // width: 550px;
-                scroll-snap-align: center; /* Ensure smooth snapping */
+        scroll-snap-align: center; /* Ensure smooth snapping */
 
         display: flex;
         margin-right: 2rem;
@@ -668,10 +749,9 @@ section {
           text-align: center;
           border: 1px solid white;
           margin-right: 1rem;
-          &:nth-child(1){
+          &:nth-child(1) {
             background-color: white;
             color: black;
-
           }
         }
       }
@@ -680,8 +760,10 @@ section {
 }
 
 .lt-benefits-wrapper {
-  background-color: white;
   padding: 0 0.5rem;
+      max-width: var(--sectionMaxWidth);
+  margin: 2rem auto;
+  // margin-top: 15rem;
   .lbw-wrp {
     max-width: 1600px;
     // padding: 0 2rem;
@@ -705,10 +787,10 @@ section {
           border: 1px solid rgba(220, 220, 220, 0.3);
           display: grid;
           margin-bottom: 8rem;
-          padding: .8rem;
-          
-          &:nth-child(even){
-            background-color: rgba(245, 245, 245, 0.2)
+          padding: 0.8rem;
+
+          &:nth-child(even) {
+            background-color: rgba(245, 245, 245, 0.2);
           }
           .grid-ctr {
             display: flex;
@@ -733,6 +815,8 @@ section {
 .testimonials {
   padding: 5rem 1.4rem;
   background-color: #ffe5b422;
+  max-width: var(--sectionMaxWidth);
+  margin: 0 auto;
   .test-wrp {
     font-size: 1.5rem;
     padding: 2rem 1.4rem;
@@ -806,7 +890,7 @@ section {
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1110px) {
   // .lt-benefits-wrapper .lbw-wrp .lbw-container{
   //   grid-template-columns: 1fr;
   // }
@@ -816,29 +900,67 @@ section {
   }
 }
 @media screen and (max-width: 800px) {
-  .hero-section .hero-ttl {
-    font-size: 4rem;
-    line-height: 50px;
+  .hero-section {
+
+    .hero-ttl{
+      font-size: 4rem;
+      line-height: 50px;
+
+    }
+    .job-form-wrp .jf-container{
+      padding: 1rem;
+      form{
+        display: unset; 
+
+        .job-dets{
+          grid-template-columns: 1fr;
+
+           div {
+            margin: .8rem 0;
+          &:nth-child(1) {
+            border: unset;
+            border-bottom: 1px solid gainsboro;
+          }
+        }
+        }
+
+        .btnwrp{
+          button{
+            width: 100%;
+            margin: unset;
+            padding: 1.2rem 0;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+              display: inline-block;
+              margin-left: 1rem;
+
+            }
+          }
+        }
+      }
+    }
   }
 
-  .after-hs-section .after-hs .container-wrp .row-wrp{
+  .after-hs-section .after-hs .container-wrp .row-wrp {
     display: flex;
     flex-direction: column;
   }
 
-  .lt-benefits-wrapper  .lbw-wrp {
+  .lt-benefits-wrapper .lbw-wrp {
     margin-top: unset;
     margin-bottom: unset;
- .lbw-container{
-    grid-template-columns: 1fr;
+    .lbw-container {
+      grid-template-columns: 1fr;
 
-    .pinned{
-      height: auto;
-      padding: 2rem 0;
+      .pinned {
+        height: auto;
+        padding: 2rem 0;
+      }
     }
   }
-  }
-  
 }
 
 // show mobile menu here
@@ -850,7 +972,7 @@ section {
     }
   }
 
-  .after-hs-section .after-hs .container-wrp .row-wrp .img-wrp{
+  .after-hs-section .after-hs .container-wrp .row-wrp .img-wrp {
     height: 27rem;
   }
 
@@ -879,4 +1001,12 @@ section {
     }
   }
 }
+
+// @media screen and (max-width: 800px) {
+//   p{
+//     color: red;
+//     font-size: 1.7rem !important;
+//   }
+  
+// }
 </style>
