@@ -5,6 +5,7 @@
       @click="appStore.showLoginRegisterView = false"
       class="login-overlay"
     ></div>
+
     <!-- <template v-if="appStore.showlo"> -->
     <div class="login-wrp">
       <div class="login-wrp-container">
@@ -99,6 +100,7 @@ p{
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   height: 100%;
   width: 100vw;
 }

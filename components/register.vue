@@ -94,6 +94,7 @@ p{
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
+  z-index: 3;
   left: 0;
   height: 100%;
   width: 100vw;
