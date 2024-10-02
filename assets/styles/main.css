@@ -4,6 +4,8 @@
 :root {
   --priColorGreen: #f5b083;
   --sectionPaddingX: 1.6rem;
+  --sectionBorderRadius: 2rem;
+  --sectionMaxWidth: 95vw;
 }
 
 * {
@@ -34,7 +36,7 @@ p{
 
 @media screen and (max-width: 800px) {
   p{
-    font-size: 1.7rem !important;
+    font-size: 1.8rem !important;
   }
   
 }
