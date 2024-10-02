@@ -113,9 +113,9 @@
             </span>
           </p>
           <div class="d-flex align-items-center justify-content-between">
-            <h2 style="font-size: 3rem" class="job-ttl">{{ selectedJob.title }}</h2>
+            <h2 style="font-size: 2.5rem" class="job-ttl">{{ selectedJob.title }}</h2>
             <div class="applnc-btn">
-              <button style="font-size: 1.5rem;" class="text-capitalize">Easy apply</button>
+              <button style="font-size: 1.4rem;" class="text-capitalize">Easy apply</button>
             </div>
     
           </div>
@@ -434,7 +434,7 @@ const truncateDescription = (description) => {
         padding: 1.3rem 0;
         font-size:2rem;
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 40% 60%;
         span{
           opacity: .7;
         }
@@ -463,7 +463,7 @@ const truncateDescription = (description) => {
 }
 
 .close-button {
-  font-size: 1.7rem;
+  font-size: 1.6rem !important;
   cursor: pointer;
   margin-bottom: 4rem;
 }
