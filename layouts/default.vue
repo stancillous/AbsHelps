@@ -21,29 +21,33 @@
         </div>
 
         <div :class="['menu-links', { 'show-mobile-menu': showMobileNav }]">
-          <ul>
-            <li><NuxtLink to="/jobs">Job offers</NuxtLink></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Solutions</a></li>
-            <li><a href="">Process</a></li>
+          <div class="ul-wrp">
 
-            <svg
-              @click="showMobileNav = !showMobileNav"
-              width="20px"
-              height="20px"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-            >
-              <path
-                class="icon-styleable-color"
-                fill="rgba(0, 0, 0, .88)"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"
-              ></path>
-            </svg>
-          </ul>
+            <ul>
+              <li><NuxtLink to="">Job offers</NuxtLink></li>
+              <li><a href="">Job Seekers</a></li>
+              <li><a href="">Employers</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="">Help Center</a></li>
+<!--   
+              <svg
+                @click="showMobileNav = !showMobileNav"
+                width="20px"
+                height="20px"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+              >
+                <path
+                  class="icon-styleable-color"
+                  fill="rgba(0, 0, 0, .88)"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.58579 8.00008L3.05025 11.5356C2.65973 11.9261 2.65973 12.5593 3.05025 12.9498C3.44078 13.3404 4.07394 13.3404 4.46447 12.9498L8 9.41429L11.5355 12.9498C11.9261 13.3404 12.5592 13.3404 12.9497 12.9498C13.3403 12.5593 13.3403 11.9261 12.9497 11.5356L9.41421 8.00008L12.9497 4.46455C13.3403 4.07402 13.3403 3.44086 12.9497 3.05033C12.5592 2.65981 11.9261 2.65981 11.5355 3.05033L8 6.58587L4.46447 3.05033C4.07394 2.65981 3.44078 2.65981 3.05025 3.05033C2.65973 3.44086 2.65973 4.07402 3.05025 4.46455L6.58579 8.00008Z"
+                ></path>
+              </svg> -->
+            </ul>
+          </div>
         </div>
 
         <div class="d-flex align-items-center">
@@ -84,11 +88,11 @@
           <div>
             <!-- <p>Quick Links</p> -->
             <ul>
-              <li><a href="">Job offers</a></li>
-              <li><a href="">Services</a></li>
-              <li><a href="">Solutions</a></li>
-              <li><a href="">Careers</a></li>
-              <li><a href="">Contact</a></li>
+              <li><a href="">About us</a></li>
+              <li><a href="">Contact us</a></li>
+              <li><a href="">Help center</a></li>
+              <li><a href="">Privacy policy</a></li>
+              <li><NuxtLink to="">Terms & Conditions</NuxtLink></li>
             </ul>
           </div>
         </div>
@@ -280,32 +284,41 @@ footer {
         opacity: 0;
         transition: all 0.4s ease-in-out;
 
+        
+        .ul-wrp{
+          display: flex;
+          padding-left: 1rem;
+          height: 100%;
+          align-items: center;
+
+        }
         ul {
-          height: 80%;
+          height: 50%;
           align-items: start;
           padding-top: 7rem;
           display: flex;
           flex-direction: column;
           position: relative;
 
-          svg {
-            display: block;
-            position: absolute;
-            padding: 0.4rem;
-            cursor: pointer;
-            width: 2.3rem;
-            height: 2.3rem;
-            border-radius: 50%;
-            background-color: rgba(220, 220, 220, 0.424);
-            right: 2rem;
-            top: 4.5rem;
-          }
+          // svg {
+          //   display: block;
+          //   position: absolute;
+          //   padding: 0.4rem;
+          //   cursor: pointer;
+          //   width: 2.3rem;
+          //   height: 2.3rem;
+          //   height: 5rem;
+          //   border-radius: 50%;
+          //   background-color: rgba(220, 220, 220, 0.424);
+          //   right: 2rem;
+          //   top: 4.5rem;
+          // }
           li {
             padding: 1.4rem 0;
             a {
               // font-size: 2rem;
               color: black;
-              text-transform: uppercase;
+              text-transform: capitalize;
             }
           }
         }
