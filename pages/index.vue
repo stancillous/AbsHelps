@@ -18,6 +18,7 @@
                     <div @click="showJobFilters = !showJobFilters" class="profession-div">
                       <label for="profession">Profession</label>
                       <input
+                      readonly
                         v-model="userEnteredProfession"
                         id="profession"
                         type="text"
@@ -588,7 +589,6 @@ section {
       input {
         padding: 1rem;
         border: none;
-
         &:focus {
           outline: none;
           border: none;
