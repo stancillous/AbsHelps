@@ -12,17 +12,40 @@
               <div class="jf-container">
                 <form
                   action=""
-                 
+                  @submit.prevent="showJobs()"
                 >
                   <div class="job-dets">
-                    <div>
+                    <div @click="showJobFilters = !showJobFilters" class="profession-div">
                       <label for="profession">Profession</label>
                       <input
+                        v-model="userEnteredProfession"
                         id="profession"
                         type="text"
-                        placeholder="Your profession"
+                        placeholder="Select your profession"
                       />
+
+                      <template v-if="showJobFilters">
+                        <div class="job-filters">
+                          <ul>
+                            <li @click.prevent="userEnteredProfession='Housekeeping'"><NuxtLink to="">Housekeeping</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Nannies'"><NuxtLink to="">Nannies</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Domestic managers'"><NuxtLink to="">Domestic managers</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Cleaners'" ><NuxtLink to="">Cleaners</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Chefs'"><NuxtLink to="">Chefs/cooks</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Gardeners'"><NuxtLink to="">Gardeners</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Office assistants'"><NuxtLink to="">Office assistants</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Receptionists'" ><NuxtLink to="">Receptionists</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Sales rep'"><NuxtLink to="">Sales representative</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Drivers'"><NuxtLink to="">Drivers</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Cashiers'"><NuxtLink to="">Cahiers</NuxtLink></li>
+                            <li @click.prevent="userEnteredProfession='Waiters'"><NuxtLink to="">Waiters</NuxtLink></li>
+                            <li  @click.prevent="userEnteredProfession='Caregivers'" ><NuxtLink to="">Caregivers</NuxtLink></li>
+                          </ul>
+                        </div>
+
+                      </template>
                     </div>
+
 
                     <div>
                       <label for="location">Location</label>
@@ -391,6 +414,10 @@ import { ScrollTrigger } from "gsap/all";
 // variable to tell if to show the mobile nav
 const showMobileNav = ref(false);
 
+const showJobFilters = ref(false); /**to tell when to show/hide thejob filters on the hero section */
+
+let userEnteredProfession = ref(""); /**to hold the profession name entered by the user */
+
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
@@ -462,6 +489,10 @@ const prevReview = () => {
     currentIndex.value -= 1;
   }
 };
+
+async function showJobs() {
+  await navigateTo("jobs")
+}
 </script>
 
 <style scoped lang="scss">
@@ -568,11 +599,48 @@ section {
         width: 100%;
         grid-template-columns: 1fr 1fr;
 
-        div {
-          &:nth-child(1) {
-            border-right: 1px solid gainsboro;
+        .profession-div{
+          position: relative;
+          input{
+            cursor: pointer;
           }
+          .job-filters{
+            // border: 1px solid;
+            position: absolute;
+            top: 6.8rem;
+            left: -0.4rem;
+            right: 0;
+            width: 100%;
+            height: auto;
+            max-height: 30rem;
+            overflow-y: auto;
+            background-color: white;
+            border-radius: 1rem;
+            ul li{
+              display: block;
+              margin: .5rem 0;
+              padding: 0.5rem 0.2rem;
+              border-bottom: .1px solid gainsboro;
+              font-size: 1.4rem;
+              opacity: .9;
+
+              &:hover{
+                background-color: gainsboro;
+              }
+              a{
+                color: black;
+              }
+            }
+          }
+
+          
         }
+        // div {
+        //   &:nth-child(1) {
+        //     border-right: 1px solid gainsboro;
+        //   }
+
+        // }
       }
 
       .btnwrp {
