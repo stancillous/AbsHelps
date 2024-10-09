@@ -1,10 +1,6 @@
 <template>
   <div class="jobs-container">
 
-    <div class="ttls">
-
-</div>
-
 
 <div class="jobs-container-wrp">
   
