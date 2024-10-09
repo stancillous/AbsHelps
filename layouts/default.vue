@@ -24,11 +24,11 @@
           <div class="ul-wrp">
 
             <ul>
-              <li><NuxtLink to="/jobs">View jobs</NuxtLink></li>
-              <li><a href="">Job Seekers</a></li>
-              <li><a href="">Employers</a></li>
-              <li><a href="/about-us">About us</a></li>
-              <li><a href="mailto:support@gc.com">Help Center</a></li>
+              <li><NuxtLink @click="showMobileNav = false" to="/jobs">View jobs</NuxtLink></li>
+              <li><a @click="showMobileNav = false" href="">Job Seekers</a></li>
+              <li><a @click="showMobileNav = false" href="">Employers</a></li>
+              <li><a @click="showMobileNav = false" href="/about-us">About us</a></li>
+              <li><a @click="showMobileNav = false" href="mailto:support@gc.com">Help Center</a></li>
 
             </ul>
           </div>
